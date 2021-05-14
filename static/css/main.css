@@ -3711,6 +3711,17 @@ mark, .mark {
 }
 @charset "UTF-8";
 
+#sosial ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: inline-flex
+}
+
+#sosial li {
+        margin: 5px;
+      }
+  
 
 
 /* 30. consult_header
