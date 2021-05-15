@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path, re_path
 from home.urls import urlpatterns as index_paths
+from poems.urls import urlpatterns as poems_paths
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'',include(index_paths)),
+    re_path(r'poems',include(poems_paths))
 ]
