@@ -7,11 +7,22 @@
 			<!-- Content-->
 			<div class="md-content">
 				
-				<!-- page-title -->
+				<!-- page-title
 				<div class="page-title">
-
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8 offset-0 offset-sm-0 offset-md-0 offset-lg-2 ">
+								<h2 class="page-title__title">Our blog</h2>
+								
+							
+								<nav><a class="breadcrumb__item" href="#">Home</a><span class="breadcrumb__item active">Blog</span>
+								</nav>
+								
+							</div>
+						</div>
+					</div>
 				</div>
-				<!-- End / page-title -->
+				End / page-title -->
 				
 				
 				<!-- Section -->
@@ -24,13 +35,13 @@
 								
 								<!--  -->
 								<div class="post-01__style-02 md-text-center">
-									<div class="post-01__media"><a href="poems-detail.html"><img src="assets/img/blogs/1.jpg" alt=""/></a>
+									<div class="post-01__media"><a href={% url 'poems_detail' %}><img src="static/img/blogs/1.jpg" alt=""/></a>
 									</div>
 									<div>
 										<ul class="post-01__categories">
 											<li><a href="#">Business</a></li>
 										</ul>
-										<h2 class="post-01__title"><a href="poems-detail.html">How To Build A Better Website</a></h2>
+										<h2 class="post-01__title"><a href="blog-detail.html">How To Build A Better Website</a></h2>
 										<div class="post-01__time">Nov 20, 2017</div>
 										<div class="post-01__note">by Alice Brooks</div>
 									</div>
@@ -45,7 +56,7 @@
 											<div class="video" data-init="video">
 												<iframe src="https://www.youtube.com/embed/pX6nutvtDnI" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 												<div class="video-content">
-													<div class="video-background" style="background-image: url(assets/img/blogs/2.jpg);"></div>
+													<div class="video-background" style="background-image: url(static/img/blogs/2.jpg);"></div>
 													<div class="video-inner">
 														<div class="video-button"><i class="fa fa-play"></i></div>
 													</div>
@@ -57,7 +68,7 @@
 										<ul class="post-01__categories">
 											<li><a href="#">Services</a></li>
 										</ul>
-										<h2 class="post-01__title"><a href="poems-detail.html">Design a Perfect Homepage</a></h2>
+										<h2 class="post-01__title"><a href="blog-detail.html">Design a Perfect Homepage</a></h2>
 										<div class="post-01__time">Oct 28, 2017</div>
 										<div class="post-01__note">by Cynthia Aguilar</div>
 									</div>
@@ -73,7 +84,7 @@
 										<ul class="post-01__categories">
 											<li><a href="#">Business</a></li>
 										</ul>
-										<h2 class="post-01__title"><a href="poems-detail.html">How to Create and Manage SVG Sprites</a></h2>
+										<h2 class="post-01__title"><a href="blog-detail.html">How to Create and Manage SVG Sprites</a></h2>
 										<div class="post-01__time">Oct 28, 2017</div>
 										<div class="post-01__note">by Brandon Hanson</div>
 									</div>
@@ -95,7 +106,7 @@
 										<ul class="post-01__categories">
 											<li><a href="#">Services</a></li>
 										</ul>
-										<h2 class="post-01__title"><a href="poems-detail.html">Getting Started with Vue.Js</a></h2>
+										<h2 class="post-01__title"><a href="blog-detail.html">Getting Started with Vue.Js</a></h2>
 										<div class="post-01__time">Oct 26, 2017</div>
 										<div class="post-01__note">by Jose Snyder</div>
 									</div>
