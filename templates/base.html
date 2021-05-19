@@ -65,19 +65,19 @@
 						
 						<!-- consult-menu -->
 						<ul class="consult-menu">
-							<li class="current-menu-item"><a href="index.html">Home</a>
+							<li class="current-menu-item"><a href={% url 'index' %}>Home</a>
 							</li>
-							<li><a href="about.html">about</a>
+							<li><a href={% url 'about' %}>about</a>
 							</li>
 							<li><a href="#">Learning Method</a>
 							</li>
 							<li class="menu-item-has-children"><a href={% url 'poems' %}>Poetry</a>
-								<ul class="sub-menu">
-									<li><a href="blog-detail.html">Brows Poetry</a>
+								<!-- <ul class="sub-menu">
+									<li><a href="blog-detail.html">Brows Poetry</a> 
 									</li>
-								</ul>
+								</ul>  -->
 							</li>
-							<li><a href="contact.html">contact</a>
+							<li><a href={% url 'contact' %}>contact</a>
 							</li>
 						</ul><!-- consult-menu -->
 						
