@@ -1,1 +1,1 @@
-web: gunicorn poetische_metode_internationale_taal.wsgi:application
+web: gunicorn poetische-metode-international.wsgi:application
