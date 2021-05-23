@@ -1,5 +1,7 @@
 from django.db import models
 from django.db.models.base import Model
+from django.utils.translation import gettext_lazy as _
+from translated_fields import TranslatedField
 
 # Create your models here.
 class Poem(models.Model):
@@ -13,11 +15,15 @@ class Poem(models.Model):
 
 class Title(models.Model):
     poem = models.ForeignKey(Poem, related_name='title', on_delete=models.CASCADE)
-    title = models.CharField(max_length=254, default='')
+    title = TranslatedField(
+        models.CharField(_("title"), max_length=254, default='')
+    )
 
 class Stanza(models.Model):
     poem = models.ForeignKey(Poem, related_name='stanzas', on_delete=models.CASCADE)
 
 class Line(models.Model):
     stanza = models.ForeignKey(Stanza, related_name='lines', on_delete=models.CASCADE)
-    line = models.CharField(max_length=1024, default='')
+    line = TranslatedField(
+        models.CharField(_("line"), max_length=1024, default='')
+    )

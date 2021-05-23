@@ -1,16 +1,17 @@
 from django.contrib import admin
+from translated_fields import TranslatedFieldAdmin
 from nested_admin import NestedModelAdmin, NestedStackedInline, NestedTabularInline
 from .models import Poem, Title, Stanza, Line
 
-class LineInline(NestedTabularInline):
+class LineInline(TranslatedFieldAdmin, NestedTabularInline):
     model = Line
     extra = 0
-class TitleInline(NestedTabularInline):
+class TitleInline(TranslatedFieldAdmin, NestedTabularInline):
     model = Title
     extra = 1
     max_num = 1
     min_num = 1
-class StanzaInline(NestedTabularInline):
+class StanzaInline(TranslatedFieldAdmin, NestedTabularInline):
     model = Stanza
     inlines = [
         LineInline,
@@ -19,7 +20,7 @@ class StanzaInline(NestedTabularInline):
 
 # Register your models here.
 @admin.register(Poem)
-class PoemAdmin(NestedModelAdmin):
+class PoemAdmin(TranslatedFieldAdmin, NestedModelAdmin):
     inlines = [
         TitleInline,
         StanzaInline,
