@@ -40,7 +40,7 @@
 											<!-- <a class="btn btn-capsule btn-outline-primary mt-4" href="#">learn more</a>											 -->
 										</div>
 									</div>
-									<div class="col-6 post-01__media"><a href={% url 'single_poem' 1 %}><img src="static/img/blogs/1.jpg" alt=""/></a>
+									<div class="col-6 post-01__media"><a href={% url 'single_poem' 1 %}><img src="{% static 'img/blogs/1.jpg' %}" alt=""/></a>
 									</div>
 								</div><!-- End /  -->
 								
@@ -68,7 +68,7 @@
 											<div class="video" data-init="video">
 												<iframe src="https://www.youtube.com/embed/pX6nutvtDnI" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 												<div class="video-content">
-													<div class="video-background" style="background-image: url(static/img/blogs/2.jpg);"></div>
+													<div class="video-background" style="background-image: url({% static 'img/blogs/2.jpg' %});"></div>
 													<div class="video-inner">
 														<div class="video-button"><i class="fa fa-play"></i></div>
 													</div>
