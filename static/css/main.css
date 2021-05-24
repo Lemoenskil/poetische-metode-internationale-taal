@@ -1028,6 +1028,10 @@ body {
     background-color: #A9DFBF !important;
 }
 
+.hint {
+    color: #a5a5a5;
+}
+
 body.md-skin-dark {
     background-color: #1a1a23;
 }
