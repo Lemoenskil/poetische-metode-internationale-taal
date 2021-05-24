@@ -25,5 +25,5 @@ from poems.urls import urlpatterns as poems_paths
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'',include(index_paths)),
-    re_path(r'poems',include(poems_paths))
+    re_path(r'poems/',include(poems_paths))
 ]

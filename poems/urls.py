@@ -1,8 +1,8 @@
-from django.urls import include, path
+from django.urls import include, path, re_path
 
 from . import views
 
 urlpatterns = [
     path('', views.poems, name='poems'),
-    path('poem', views.poems_detail, name='poems_detail'),
+    re_path(r'^(?P<id>.+)$', views.single_poem, name='single_poem'),
 ]

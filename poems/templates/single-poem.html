@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 
@@ -23,8 +24,10 @@
 								<div class="col-xl-12 offset-0 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-1 ">
 									<h1>Ithaka</h1>
 									<ul class="consult-postDetail__meta">
-										<li><i class="fa fa-user" aria-hidden="true"></i> C. P. CAVAFY</li>
-										<li><i class="fa fa-tags" aria-hidden="true"></i>Greece< </li>
+										<li><i class="fa fa-user" aria-hidden="true"></i>{{poem.author}}</li>
+										{% for title in poem.title.all %}
+											<li><i class="fa fa-tags" aria-hidden="true"></i>{{title.title}}</li>
+										{% endfor %}
 										<li><i class="fa fa-comments-o" aria-hidden="true"></i>Greek Mythologys</li>
 										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>June 25th, 2017</li>
 									</ul>
@@ -32,7 +35,25 @@
 								</div>
 							</div>
 
-							<div class="container">
+							{% for stanza in poem.stanzas.all %}
+								<div class="container">
+									<div class="row">
+										{% for line in stanza.lines.all %}
+										<div class="col-xl-5 offset-0 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-1 ">
+											{% language "eo" %}
+											{{line.line}}
+											{% endlanguage %}
+										</div>
+										<div class="col-xl-5 offset-0 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-1 ">
+											{{line.line}}
+										</div>
+										{% endfor %}
+									</div>
+									<p class="text" />
+								</div>	
+							{% endfor %}
+
+							<!-- <div class="container">
 								<div class="row">
 									<div class="col-xl-5 offset-0 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-1 ">
 										<p class="text">
@@ -127,7 +148,7 @@
 										</p>
 									</div>
 								</div>
-							</div>
+							</div> -->
 
 							<blockquote>
 								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
