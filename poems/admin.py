@@ -6,11 +6,13 @@ from .models import Poem, Title, Stanza, Line
 class LineInline(TranslatedFieldAdmin, NestedTabularInline):
     model = Line
     extra = 0
+
 class TitleInline(TranslatedFieldAdmin, NestedTabularInline):
     model = Title
     extra = 1
     max_num = 1
     min_num = 1
+
 class StanzaInline(TranslatedFieldAdmin, NestedTabularInline):
     model = Stanza
     inlines = [
