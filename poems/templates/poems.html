@@ -15,24 +15,28 @@
 						<div class="layout-blog sidebar-left">
 							<div class="layout-blog__content">
 								
-								<!--  -->
+								<!--Poems  -->
+								{% for poem in poems %}
 								<div class="col-12 post-01__style-02 md-text-center row">
 									<div class="col-6">
 										<ul class="post-01__categories">
 											<li><a href="#">Greek Mythologys</a></li>
 										</ul>
-										<h2 class="post-01__title"><a href={% url 'single_poem' 1 %}>Ithaka</a></h2>
-										<div class="post-01__time">May 20, 2021</div>
-										<div class="post-01__note">C. P. CAVAFY</div>
-										<div class="post-01__note">Greece</div>
+										{% for title in poem.title.all %}
+										<h2 class="post-01__title"><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></h2>
+										{% endfor %}
+										<div class="post-01__time">?</div>
+										<div class="post-01__note">{{poem.author}}</div>
+										<div class="post-01__note">?</div>
 										<div class="overflow-hidden">
 											<p class="text" data-zanim-xs="{&quot;delay&quot;:0.2}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
 
-													Als je de tocht aanvaardt naar Ithaka<br>
-													wens dat de weg dan lang mag zijn,<br>
-													vol avonturen, vol ervaringen.<br>
-													De Kyklopen en de Laistrygonen,<br>
-													de woedende Poseidon behoef je niet te vrezen,<br>
+												{% for stanza in poem.stanzas.all %}
+													{% for line in stanza.lines.all %}
+														{{line.line}}<br>
+													{% endfor %}
+													<br>
+												{% endfor %}	
 											</p>
 										</div>
 										<div data-zanim-xs="{&quot;delay&quot;:0.3}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
@@ -43,41 +47,9 @@
 									<div class="col-6 post-01__media"><a href={% url 'single_poem' 1 %}><img src="{% static 'img/blogs/Ithaka.jpg' %}" alt=""/></a>
 									</div>
 								</div><!-- End /  -->
-								
-								
-								<!--  -->
-								<div class="col-12 post-01__style-02 md-text-center row">
 
-									<div class="col-6">
-										<ul class="post-01__categories">
-											<li><a href="#">Services</a></li>
-										</ul>
-										<h2 class="post-01__title"><a href="blog-detail.html">Design a Perfect Homepage</a></h2>
-										<div class="post-01__time">Oct 28, 2017</div>
-										<div class="post-01__note">by Cynthia Aguilar</div>
-										<div class="overflow-hidden">
-											<p data-zanim-xs="{&quot;delay&quot;:0.2}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Every now and then go away, have a little relaxation, for when you come back to your work your judgment will be surer. Go some distance away because then the work appears smaller and more of it can be taken in at a glance and a lack of harmony and proportion is more readily seen.</p>
-										</div>
-										<div data-zanim-xs="{&quot;delay&quot;:0.3}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-											<a class="btn btn-capsule btn-outline-primary mt-4" href="#">learn more</a>
-										</div>
-									</div>
-									<div class="col-6 post-01__media">
-											
-											<!-- video -->
-											<div class="video" data-init="video">
-												<iframe src="https://www.youtube.com/embed/pX6nutvtDnI" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-												<div class="video-content">
-													<div class="video-background" style="background-image: url({% static 'img/blogs/2.jpg' %});"></div>
-													<div class="video-inner">
-														<div class="video-button"><i class="fa fa-play"></i></div>
-													</div>
-												</div>
-											</div><!-- End / video -->
-											
-									</div>
-								</div><!-- End /  -->
-								
+								{% endfor %}	
+
 								<!-- pagination -->
 								<ul class="pagination">
 									<a class="pagination__item" href="#">1</a>

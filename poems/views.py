@@ -4,7 +4,8 @@ from .models import Poem
 # Create your views here.
 def poems(request):
     """A view that displays the poems page"""
-    return render(request, "poems.html")
+    poems = Poem.objects.all()
+    return render(request, "poems.html", { 'poems': poems })
 
 def single_poem(request, id):
     """A view that displays a single poem"""
