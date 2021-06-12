@@ -26,14 +26,14 @@
 									<h1>{{title.title}}</h1>
 									<ul class="consult-postDetail__meta">
 										<li><i class="fa fa-user" aria-hidden="true"></i>{{poem.author}}</li>										
-										<li><i class="fa fa-tags" aria-hidden="true"></i>{{title.title}}</li>
-										<li><i class="fa fa-comments-o" aria-hidden="true"></i>Genre?</li>
-										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>datum?</li>
+										<li><i class="fa fa-globe" aria-hidden="true"></i>{{poem.author.country_of_birth}}</li>
+										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>{{poem.author.date_of_birth | date:"Y"}} - {{poem.author.date_of_death | date:"Y"}}</li>
+										<li><i class="fa fa-th-large" aria-hidden="true"></i>{{poem.genre}}</li>
 									</ul>
 									{% endfor %}
 								</div>
 								<div class="col-xl-12 offset-0 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-1 "></div>
-								<p class="text">Nam elit ligula, egestas et ornare non, viverra eu justo. Aliquam ornare lectus ut pharetra dictum. Aliquam erat volutpat. In fringilla erat at eros pharetra faucibus. Nunc a magna eu lectus fringilla interdum luctus vitae diam. Morbi ac orci ac dolor pellentesque interdum vel accumsan risus. In vestibulum mattis turpis nec rhoncus. Maecenas facilisis commodo nunc, in blandit sem rutrum ac. Integer sit amet vehicula sem. Sed dictum arcu sit amet eros tempus pretium. Aenean lobortis risus purus.</p>
+								<p class="text">{{poem.abstract | linebreaks}}</p>
 								</div>
 							</div>
 
@@ -56,7 +56,7 @@
 							{% endfor %}
 
 							<blockquote>
-								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+								<p>{{poem.author.abstract | linebreaks}}</p>
 							</blockquote>
 						</div>
 					</div>

@@ -2,17 +2,48 @@ from django.db import models
 from django.db.models.base import Model
 from django.utils.translation import gettext_lazy as _
 from translated_fields import TranslatedField
+import datetime
 
-    
+class Genre(models.Model):
+    name = TranslatedField(
+        models.CharField(_("name"), max_length=254, default='')
+    )
+
+    def __str__(self):
+        return self.name
+
+class Country(models.Model):
+    name = TranslatedField(
+        models.CharField(_("name"), max_length=254, default='')
+    )
+
+    class Meta:
+        verbose_name_plural = "Countries"
+
+    def __str__(self):
+        return self.name
+
 # Create your models here.
 class Author(models.Model):
-    name = models.CharField(max_length=254, default='')
+    name = TranslatedField(
+        models.CharField(_("name"), max_length=254, default='')
+    )
+    date_of_birth = models.DateField(default=datetime.date.today)
+    date_of_death = models.DateField(blank=True, null=True)
+    country_of_birth = models.ForeignKey(Country, related_name='country_of_birth', on_delete=models.CASCADE, null=True)
+    abstract = TranslatedField(
+        models.TextField(_("abstract"), default='')
+    )
 
     def __str__(self):
         return self.name
 
 class Poem(models.Model):
     author = models.ForeignKey(Author, related_name='poems', on_delete=models.CASCADE)
+    genre = models.ForeignKey(Genre, related_name='poems', on_delete=models.CASCADE, null=True)
+    abstract = TranslatedField(
+        models.TextField(_("abstract"), default='')
+    )
 
     def __str__(self):
         return ' - '.join([
