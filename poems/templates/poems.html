@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load poem_lines %}
 
 {% block content %}
 			
@@ -31,13 +32,11 @@
 	
 										<div class="overflow-hidden">
 											<p class="text" data-zanim-xs="{&quot;delay&quot;:0.2}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-
-												{% for stanza in poem.stanzas.all %}
-													{% for line in stanza.lines.all %}
-														{{line.line}}<br>
+												{% with poem.stanzas|flatten_stanzas|slice:":5" as lines %}
+													{% for line in lines %}
+														{{line}}<br>
 													{% endfor %}
-													<br>
-												{% endfor %}	
+												{% endwith %}
 											</p>
 										</div>
 										<div data-zanim-xs="{&quot;delay&quot;:0.3}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
