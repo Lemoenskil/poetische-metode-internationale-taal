@@ -41,6 +41,9 @@ class Author(models.Model):
 class Poem(models.Model):
     author = models.ForeignKey(Author, related_name='poems', on_delete=models.CASCADE)
     genre = models.ForeignKey(Genre, related_name='poems', on_delete=models.CASCADE, null=True)
+    abstract = TranslatedField(
+        models.TextField(_("abstract"), default='')
+    )
 
     def __str__(self):
         return ' - '.join([
