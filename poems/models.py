@@ -3,14 +3,21 @@ from django.db.models.base import Model
 from django.utils.translation import gettext_lazy as _
 from translated_fields import TranslatedField
 
+    
 # Create your models here.
+class Author(models.Model):
+    name = models.CharField(max_length=254, default='')
+
+    def __str__(self):
+        return self.name
+
 class Poem(models.Model):
-    author = models.CharField(max_length=254, default='')
+    author = models.ForeignKey(Author, related_name='poems', on_delete=models.CASCADE)
 
     def __str__(self):
         return ' - '.join([
             self.title.all()[0].title,
-            self.author,
+            self.author.name,
         ])
 
 class Title(models.Model):
