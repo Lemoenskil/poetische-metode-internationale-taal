@@ -22,15 +22,15 @@
 							<div class="row">
 								<div class="image-full"><img src="{% static 'img/blogs/Ithaka.jpg' %}" alt=""></div>
 								<div class="col-xl-6 offset-0 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-1 ">
-									<h1>Ithaka</h1>
+									{% for title in poem.title.all %}
+									<h1>{{title.title}}</h1>
 									<ul class="consult-postDetail__meta">
-										<li><i class="fa fa-user" aria-hidden="true"></i>{{poem.author}}</li>
-										{% for title in poem.title.all %}
-											<li><i class="fa fa-tags" aria-hidden="true"></i>{{title.title}}</li>
-										{% endfor %}
-										<li><i class="fa fa-comments-o" aria-hidden="true"></i>Greek Mythologys</li>
-										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>June 25th, 2017</li>
+										<li><i class="fa fa-user" aria-hidden="true"></i>{{poem.author}}</li>										
+										<li><i class="fa fa-tags" aria-hidden="true"></i>{{title.title}}</li>
+										<li><i class="fa fa-comments-o" aria-hidden="true"></i>Genre?</li>
+										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>datum?</li>
 									</ul>
+									{% endfor %}
 								</div>
 								<div class="col-xl-12 offset-0 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-1 "></div>
 								<p class="text">Nam elit ligula, egestas et ornare non, viverra eu justo. Aliquam ornare lectus ut pharetra dictum. Aliquam erat volutpat. In fringilla erat at eros pharetra faucibus. Nunc a magna eu lectus fringilla interdum luctus vitae diam. Morbi ac orci ac dolor pellentesque interdum vel accumsan risus. In vestibulum mattis turpis nec rhoncus. Maecenas facilisis commodo nunc, in blandit sem rutrum ac. Integer sit amet vehicula sem. Sed dictum arcu sit amet eros tempus pretium. Aenean lobortis risus purus.</p>

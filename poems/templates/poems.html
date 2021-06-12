@@ -20,14 +20,14 @@
 								<div class="col-12 post-01__style-02 md-text-center row">
 									<div class="col-6">
 										<ul class="post-01__categories">
-											<li><a href="#">Greek Mythologys</a></li>
+											<li><a href="#">Genre?</a></li>
 										</ul>
 										{% for title in poem.title.all %}
 										<h2 class="post-01__title"><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></h2>
 										{% endfor %}
-										<div class="post-01__time">?</div>
+										<div class="post-01__time">datum?</div>
 										<div class="post-01__note">{{poem.author}}</div>
-										<div class="post-01__note">?</div>
+										<div class="post-01__note">land?</div>
 										<div class="overflow-hidden">
 											<p class="text" data-zanim-xs="{&quot;delay&quot;:0.2}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
 
@@ -40,11 +40,11 @@
 											</p>
 										</div>
 										<div data-zanim-xs="{&quot;delay&quot;:0.3}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-											<a class=" mt-4" href={% url 'single_poem' 1 %}>read more...............</a>
+											<a class=" mt-4" href={% url 'single_poem' poem.id  %}>read more...............</a>
 											<!-- <a class="btn btn-capsule btn-outline-primary mt-4" href="#">learn more</a>											 -->
 										</div>
 									</div>
-									<div class="col-6 post-01__media"><a href={% url 'single_poem' 1 %}><img src="{% static 'img/blogs/Ithaka.jpg' %}" alt=""/></a>
+									<div class="col-6 post-01__media"><a href={% url 'single_poem' poem.id %}><img src="{% static 'img/blogs/Ithaka.jpg' %}" alt=""/></a>
 									</div>
 								</div><!-- End /  -->
 
