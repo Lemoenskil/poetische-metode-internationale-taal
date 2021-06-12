@@ -6,7 +6,9 @@ from translated_fields import TranslatedField
     
 # Create your models here.
 class Author(models.Model):
-    name = models.CharField(max_length=254, default='')
+    name = TranslatedField(
+        models.CharField(_("name"), max_length=254, default='')
+    )
 
     def __str__(self):
         return self.name
