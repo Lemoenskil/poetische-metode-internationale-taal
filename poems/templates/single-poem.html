@@ -28,7 +28,7 @@
 										<li><i class="fa fa-user" aria-hidden="true"></i>{{poem.author}}</li>										
 										<li><i class="fa fa-globe" aria-hidden="true"></i>{{poem.author.country_of_birth}}</li>
 										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>{{poem.author.date_of_birth | date:"Y"}} - {{poem.author.date_of_death | date:"Y"}}</li>
-										<li><i class="fa fa-th-large" aria-hidden="true"></i>Genre?</li>
+										<li><i class="fa fa-th-large" aria-hidden="true"></i>{{poem.genre}}</li>
 									</ul>
 									{% endfor %}
 								</div>

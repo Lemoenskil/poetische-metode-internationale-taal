@@ -1,7 +1,11 @@
 from django.contrib import admin
 from translated_fields import TranslatedFieldAdmin
 from nested_admin import NestedModelAdmin, NestedStackedInline, NestedTabularInline
-from .models import Country, Author, Poem, Title, Stanza, Line
+from .models import Genre, Country, Author, Poem, Title, Stanza, Line
+
+@admin.register(Genre)
+class GenreAdmin(TranslatedFieldAdmin, NestedModelAdmin):
+    pass
 
 @admin.register(Country)
 class CountryAdmin(TranslatedFieldAdmin, NestedModelAdmin):

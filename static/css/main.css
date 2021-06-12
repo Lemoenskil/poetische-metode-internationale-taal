@@ -2796,6 +2796,24 @@ mark, .mark {
     color: #626262;
 }
 
+.post-01__note li {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #626262;
+}
+
+.post-01__note li {
+    display: inline-block;
+    margin-right: 30px;
+    /* color: #c2c2c2; */
+    font-size: 14px;
+}
+
+.post-01__note li i {
+    margin-right: 10px;
+}
+
 .post-01__style-02 {
     margin-bottom: 50px;
 }

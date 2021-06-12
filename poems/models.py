@@ -4,6 +4,14 @@ from django.utils.translation import gettext_lazy as _
 from translated_fields import TranslatedField
 import datetime
 
+class Genre(models.Model):
+    name = TranslatedField(
+        models.CharField(_("name"), max_length=254, default='')
+    )
+
+    def __str__(self):
+        return self.name
+
 class Country(models.Model):
     name = TranslatedField(
         models.CharField(_("name"), max_length=254, default='')
@@ -32,6 +40,7 @@ class Author(models.Model):
 
 class Poem(models.Model):
     author = models.ForeignKey(Author, related_name='poems', on_delete=models.CASCADE)
+    genre = models.ForeignKey(Genre, related_name='poems', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return ' - '.join([
