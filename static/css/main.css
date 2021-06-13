@@ -3339,8 +3339,8 @@ mark, .mark {
 
 .textbox__image img {
     width: 100%;
-    max-height: 250px;
-    min-height: 250px;
+    max-height: 300px;
+    min-height: 350px;
 }
 
 .textbox__body {
