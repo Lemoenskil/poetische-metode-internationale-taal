@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse 
-
+from poems.models import Poem
 
 # Create your views here.
 def index(request):
