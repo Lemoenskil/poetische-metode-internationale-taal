@@ -2,6 +2,8 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load i18n %}
+{% load poem_lines %}
 
 {% block content %}
 			
@@ -30,7 +32,8 @@
 				
 				<!-- Service-->
 				
-				<!-- Section -->
+				<!-- Section: Featured Poem -->
+				{% with poems|dictsortreversed:"featured"|first as poem %}
 				<section class="md-section" style="background-color:#A9DFBF;padding:0;">
 					<div class="container">
 						<div class="textbox-group">
@@ -41,8 +44,17 @@
 									<div class="textbox">
 										<div class="textbox__image"><a href="#"><img src="{% static 'img/blogs/Ithaka.jpg' %}" alt=""/></a></div>
 										<div class="textbox__body">
-											<h2 class="textbox__title"><a href="#">title?</a></h2>
-											<div class="textbox__description">poem</div>
+											{% with poem.title.all|first as title %}
+											<h2 class="textbox__title"><a href="#">{{title.title}}</a></h2>
+											{% endwith %}
+											{% with poem.stanzas|flatten_stanzas|slice:":3" as lines %}
+											<div class="textbox__description">
+												{% for line in lines %}
+													{{line}}<br>
+												{% endfor %}
+												<a class=" mt-4" href={% url 'single_poem' poem.id  %}>Lees verder ...</a>
+											</div>
+											{% endwith %}
 										</div>
 									</div><!-- End / textbox -->
 									
@@ -53,8 +65,19 @@
 									<div class="textbox">
 										<div class="textbox__image"><a href="#"><img src="{% static 'img/blogs/Ithaka.jpg' %}" alt=""/></a></div>
 										<div class="textbox__body">
-											<h2 class="textbox__title"><a href="#">Responsive Layout</a></h2>
-											<div class="textbox__description">Nam elit ligula, egestas et ornare non, viverra eu justo. Aliquam ornare lectus ut pharetra dictum. </div>
+											{% language "eo" %}
+											{% with poem.title.all|first as title %}
+											<h2 class="textbox__title"><a href="#">{{title.title}}</a></h2>
+											{% endwith %}
+											{% with poem.stanzas|flatten_stanzas|slice:":3" as lines %}
+											<div class="textbox__description">
+												{% for line in lines %}
+													{{line}}<br>
+												{% endfor %}
+												<a class=" mt-4" href={% url 'single_poem' poem.id  %}>Lees verder ...</a>
+											</div>
+											{% endwith %}
+											{% endlanguage %}
 										</div>
 									</div><!-- End / textbox -->
 									
@@ -65,8 +88,11 @@
 									<div class="textbox">
 										<div class="textbox__image"><a href="#"><img src="{% static 'img/authors/KonstantinosKavafis.jpg' %}" alt=""/></a></div>
 										<div class="textbox__body">
-											<h2 class="textbox__title"><a href="#">SEO Optimized</a></h2>
-											<div class="textbox__description">Mauris lacinia venenatis dolor sit amet viverra. Integer malesuada nulla neque. Sed rutrum ligula eu</div>
+											<h2 class="textbox__title"><a href="#">{{poem.author}}</a></h2>
+											<div class="textbox__description">
+												{{poem.author.abstract|truncatewords:15}}<br>
+												<a class=" mt-4" href={% url 'single_poem' poem.id  %}>Lees verder ...</a>
+											</div>
 										</div>
 									</div><!-- End / textbox -->
 									
@@ -75,19 +101,9 @@
 						</div>
 					</div>
 				</section>
-				<!-- End / Section -->
+				{% endwith %}
+				<!-- End / Section: Featured Poem -->
 
-				<section class="md-section" style="background-color:#f7f7f7;padding-top:0;">
-					Poems:<br>
-					{% with poems|dictsortreversed:"featured"|first as featured %}
-						{% with featured.title.all|first as title %}
-							{{title.title}}<br>
-						{% endwith %}
-					{% endwith %}
-				</section>
-
-				
-				
 				<!-- Section -->
 				<section class="md-section" style="background-color:#f7f7f7;padding-top:0;">
 					<div class="container">
