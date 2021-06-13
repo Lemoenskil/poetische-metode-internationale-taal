@@ -79,10 +79,10 @@
 
 				<section class="md-section" style="background-color:#f7f7f7;padding-top:0;">
 					Poems:<br>
-					{% with poems|dictsortreversed:"featured"|slice:":1"|first as featured %}
-						{% for title in featured.title.all %}
+					{% with poems|dictsortreversed:"featured"|first as featured %}
+						{% with featured.title.all|first as title %}
 							{{title.title}}<br>
-						{% endfor %}
+						{% endwith %}
 					{% endwith %}
 				</section>
 
