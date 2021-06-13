@@ -1,0 +1,2 @@
+# Ignore the dumped database file
+heroku.db.dump.json
