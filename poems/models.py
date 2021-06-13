@@ -39,6 +39,7 @@ class Author(models.Model):
         return self.name
 
 class Poem(models.Model):
+    featured = models.BooleanField(default=False)
     author = models.ForeignKey(Author, related_name='poems', on_delete=models.CASCADE)
     genre = models.ForeignKey(Genre, related_name='poems', on_delete=models.CASCADE, null=True)
     abstract = TranslatedField(
