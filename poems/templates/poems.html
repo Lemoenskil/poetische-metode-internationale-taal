@@ -20,9 +20,9 @@
 								{% for poem in poems %}
 								<div class="col-12 post-01__style-02 md-text-center row">
 									<div class="col-6">
-										{% for title in poem.title.all %}
+										{% with poem.title.all|first as title %}
 										<h2 class="post-01__title"><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></h2>
-										{% endfor %}
+										{% endwith %}
 										<ul class="post-01__note">
 											<li><i class="fa fa-user" aria-hidden="true"></i>{{poem.author}}</li>										
 											<li><i class="fa fa-globe" aria-hidden="true"></i>{{poem.author.country_of_birth}}</li>
