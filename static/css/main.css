@@ -3341,6 +3341,7 @@ mark, .mark {
     width: 100%;
     max-height: 300px;
     min-height: 350px;
+    object-fit: cover;
 }
 
 .textbox__body {
