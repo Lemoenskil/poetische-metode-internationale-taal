@@ -76,6 +76,16 @@
 					</div>
 				</section>
 				<!-- End / Section -->
+
+				<section class="md-section" style="background-color:#f7f7f7;padding-top:0;">
+					Poems:<br>
+					{% with poems|dictsortreversed:"featured"|slice:":1"|first as featured %}
+						{% for title in featured.title.all %}
+							{{title.title}}<br>
+						{% endfor %}
+					{% endwith %}
+				</section>
+
 				
 				
 				<!-- Section -->

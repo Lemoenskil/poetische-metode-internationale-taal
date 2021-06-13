@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect, reverse 
-
+from django.shortcuts import render, redirect, reverse
+from poems.models import Poem
 
 # Create your views here.
 def index(request):
     """A view that displays the index page"""
-    return render(request, "index.html")    
+    poems = Poem.objects.all()
+    return render(request, "index.html", { 'poems': poems })    
 
 def about(request):
     """A view that displays the about page"""
