@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.base import Model
 from django.utils.translation import gettext_lazy as _
 from translated_fields import TranslatedField
+from filer.fields.image import FilerImageField
 import datetime
 
 class Genre(models.Model):
@@ -42,6 +43,7 @@ class Poem(models.Model):
     featured = models.BooleanField(default=False)
     author = models.ForeignKey(Author, related_name='poems', on_delete=models.CASCADE)
     genre = models.ForeignKey(Genre, related_name='poems', on_delete=models.CASCADE, null=True)
+    image = FilerImageField(related_name='image', null=True, blank=True, on_delete=models.CASCADE)
     abstract = TranslatedField(
         models.TextField(_("abstract"), default='')
     )

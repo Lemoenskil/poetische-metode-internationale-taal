@@ -44,7 +44,7 @@
 											<!-- <a class="btn btn-capsule btn-outline-primary mt-4" href="#">learn more</a>											 -->
 										</div>
 									</div>
-									<div class="col-6 post-01__media"><a href={% url 'single_poem' poem.id %}><img src="{% static 'img/blogs/Ithaka.jpg' %}" alt=""/></a>
+									<div class="col-6 post-01__media"><a href={% url 'single_poem' poem.id %}><img src="{{poem.image.url}}" alt=""/></a>
 									</div>
 								</div><!-- End /  -->
 

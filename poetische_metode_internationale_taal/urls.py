@@ -20,6 +20,8 @@ from django.urls.conf import include, path, re_path
 from django.conf import settings           
 from home.urls import urlpatterns as index_paths
 from poems.urls import urlpatterns as poems_paths
+from django.conf.urls.static import static
+import os
 
 
 urlpatterns = [
@@ -27,3 +29,13 @@ urlpatterns = [
     re_path(r'',include(index_paths)),
     re_path(r'poems/',include(poems_paths))
 ]
+
+USE_S3 = os.getenv('USE_S3') == 'TRUE'
+if not USE_S3:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+print(settings.MEDIA_ROOT)
+
+for p in urlpatterns:
+    print(p)
+

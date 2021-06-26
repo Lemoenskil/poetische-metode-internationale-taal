@@ -20,7 +20,7 @@
 					<div class="col-lg-12 col-xl-8 offset-0 offset-sm-0 offset-md-0 offset-lg-1 offset-xl-2 ">
 						<div class="consult-postDetail__content">
 							<div class="row">
-								<div class="image-full"><img src="{% static 'img/blogs/Ithaka.jpg' %}" alt=""></div>
+								<div class="image-full"><img src="{{poem.image.url}}" alt=""></div>
 								<div class="col-xl-6 offset-0 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-1 ">
 									{% with poem.title.all|first as title %}
 									<h1>{{title.title}}</h1>
