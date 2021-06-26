@@ -56,8 +56,13 @@
 							{% endfor %}
 
 							<blockquote>
-								<a name="author"></a>
-								<p>{{poem.author.abstract | linebreaks}}</p>
+								<a name="author">{{poem.author.name}}, {{poem.author.country_of_birth}}, {{poem.author.date_of_birth | date:"Y"}} - {{poem.author.date_of_death | date:"Y"}}</a>
+								<div class="author_and_image">
+									{% if poem.author.portrait %}
+										<img src="{{poem.author.portrait.url}}" alt=""/>
+									{% endif %}
+									<p>{{poem.author.abstract | linebreaks}}</p>
+								</div>
 							</blockquote>
 						</div>
 					</div>

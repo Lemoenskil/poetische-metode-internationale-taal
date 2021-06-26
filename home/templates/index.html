@@ -86,7 +86,7 @@
 									
 									<!-- textbox -->
 									<div class="textbox">
-										<div class="textbox__image"><a href="{% url 'single_poem' poem.id  %}#author"><img src="{% static 'img/authors/KonstantinosKavafis.jpg' %}" alt=""/></a></div>
+										<div class="textbox__image"><a href="{% url 'single_poem' poem.id  %}#author"><img src="{{poem.author.portrait.url}}" alt=""/></a></div>
 										<div class="textbox__body">
 											<h2 class="textbox__title"><a href="{% url 'single_poem' poem.id  %}#author">{{poem.author}}</a></h2>
 											<div class="textbox__description">

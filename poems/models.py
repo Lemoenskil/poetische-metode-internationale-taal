@@ -32,6 +32,7 @@ class Author(models.Model):
     date_of_birth = models.DateField(default=datetime.date.today)
     date_of_death = models.DateField(blank=True, null=True)
     country_of_birth = models.ForeignKey(Country, related_name='country_of_birth', on_delete=models.CASCADE, null=True)
+    portrait = FilerImageField(related_name='portrait', null=True, blank=True, on_delete=models.CASCADE)
     abstract = TranslatedField(
         models.TextField(_("abstract"), default='')
     )

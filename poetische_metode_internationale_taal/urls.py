@@ -34,8 +34,3 @@ USE_S3 = os.getenv('USE_S3') == 'TRUE'
 if not USE_S3:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-print(settings.MEDIA_ROOT)
-
-for p in urlpatterns:
-    print(p)
-
