@@ -9,6 +9,8 @@ CURRENT_TIME=$(date "+%Y.%m.%d-%H.%M.%S")
 
 cd ${TOP_DIR}
 ${HEROKU_DIR}/dump-heroku-db.sh
-mv db.sqlite3 backups/db.${CURRENT_TIME}.sqlite3
+if [ -f "db.sqlite3" ]; then
+	mv db.sqlite3 backups/db.${CURRENT_TIME}.sqlite3
+fi
 python3 manage.py migrate
 ${HEROKU_DIR}/import-heroku-db.sh
