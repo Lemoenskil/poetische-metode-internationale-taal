@@ -175,11 +175,11 @@ if USE_S3:
     AWS_LOCATION = 'static'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    print(f'Using S3 storage for mediafiles: {AWS_S3_CUSTOM_DOMAIN}', file=sys.stderr)
+    # print(f'Using S3 storage for mediafiles: {AWS_S3_CUSTOM_DOMAIN}', file=sys.stderr)
 else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
-    print(f'Using local storage for mediafiles: {MEDIA_ROOT}', file=sys.stderr)
+    # print(f'Using local storage for mediafiles: {MEDIA_ROOT}', file=sys.stderr)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
