@@ -85,10 +85,32 @@
 											<div class="widget-text__content">
 												<ul>
 													<li><a href="#">Genre</a></li>
+													{% for genre in genres %}
+														<li><a href="#">-> {{genre.name}}</a></li>
+														{% for poem in genre.poems.all %}
+															{% with poem.title.all|first as title %}
+																<li><a href="#">--> {{title.title}}</a></li>
+															{% endwith %}
+														{% endfor %}
+													{% endfor %}
+													<li><a href="#">Author</a></li>
+													{% for author in authors %}
+														<li><a href="#">-> {{author.name}}</a></li>
+														{% for poem in author.poems.all %}
+															{% with poem.title.all|first as title %}
+																<li><a href="#">--> {{title.title}}</a></li>
+															{% endwith %}
+														{% endfor %}
+													{% endfor %}
 													<li><a href="#">Country</a></li>
-													<li><a href="#">author</a></li>
-													<li><a href="#">?</a></li>
-													<li><a href="#">?</a></li>
+													{% for country in countries %}
+														<li><a href="#">-> {{country.name}}</a></li>
+														{% for poem in country.poems.all %}
+															{% with poem.title.all|first as title %}
+																<li><a href="#">--> {{title.title}}</a></li>
+															{% endwith %}
+														{% endfor %}
+													{% endfor %}
 												</ul>
 											</div>
 										</section><!-- End / widget-text__widget -->
