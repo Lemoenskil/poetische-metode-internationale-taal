@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'nested_admin',
     'home',
     'poems',
+    'blogs',
 ]
 
 urlpatterns = [
