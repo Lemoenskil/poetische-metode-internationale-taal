@@ -2862,6 +2862,9 @@ mark, .mark {
 
 .post-02__media img {
     width: 100%;
+    max-height: 300px;
+    min-height: 350px;
+    object-fit: cover;
 }
 
 .post-02__body {
