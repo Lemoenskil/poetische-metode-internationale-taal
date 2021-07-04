@@ -12,7 +12,7 @@ class Blog(models.Model):
     published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     author = models.CharField(max_length=30, blank=True, null=True)
     tag = models.CharField(max_length=30, blank=True, null=True)
-    image = FilerImageField(related_name='img', null=True, blank=True, on_delete=models.CASCADE)
+    image = FilerImageField(related_name='img', null=True, blank=True, on_delete=models.SET_NULL)
 
     def __unicode__(self):
         return self.title
