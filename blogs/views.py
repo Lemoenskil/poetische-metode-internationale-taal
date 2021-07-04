@@ -15,7 +15,7 @@ def get_blogs(request):
     return render(request, "blogs.html", {'blogs': blogs})
 
 
-# def post_detail(request, pk):
+def blog_detail(request, pk):
 #     """
 #     Create a view that returns a single
 #     Post object based on the post ID (pk) and
@@ -26,7 +26,7 @@ def get_blogs(request):
 #     post = get_object_or_404(Post, pk=pk)
 #     post.views += 1
 #     post.save()
-#     return render(request, "postdetail.html", {'post': post})
+    return render(request, "blog-detail.html") #, {'blog': blog})
 
 
 # def create_or_edit_post(request, pk=None):
