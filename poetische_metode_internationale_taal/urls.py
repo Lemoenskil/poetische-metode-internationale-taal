@@ -20,18 +20,16 @@ from django.urls.conf import include, path, re_path
 from django.conf import settings           
 from home.urls import urlpatterns as index_paths
 from poems.urls import urlpatterns as poems_paths
+from blogs.urls import urlpatterns as blogs_paths
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
-from .settings import MEDIA_ROOT
 import os
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'',include(index_paths)),
     re_path(r'poems/',include(poems_paths)),
-    re_path(r'^$', RedirectView.as_view(url='blogs/')),
-    re_path(r'^blogs/', include('blogs.urls')),
+    re_path(r'blogs/', include(blogs_paths)),
 ]
 
 USE_S3 = os.getenv('USE_S3') == 'TRUE'
