@@ -10,8 +10,7 @@ def get_blogs(request):
     of Posts that were published prior to 'now'
     and render them to the 'blogs.html' template
     """
-    blogs = Blog.objects.filter(published_date__lte=timezone.now()
-        ).order_by('-published_date')
+    blogs = Blog.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, "blogs.html", {'blogs': blogs})
 
 

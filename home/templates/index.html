@@ -193,8 +193,8 @@
 					</div>
 					<div class="consult-project">
 						<div class="row">
+							{% for blog in blogs|slice:":4" %}
 							<div class="col-sm-6 col-md-6 col-lg-6 col-xl-3 " style="padding-left: 5px; padding-right: 5px;">
-								{% for blog in blogs %}
 								<!-- post-02 -->
 								<div class="post-02 post-02__style-02 js-post-effect">
 									<div class="post-02__media"><a href="{% url 'blog_detail' blog.id %}"><img src="{{blog.image.url}}" alt=""/></a></div>
@@ -206,8 +206,8 @@
 										</div>
 									</div>
 								</div><!-- End / post-02 -->
-								{% endfor %}
 							</div>
+							{% endfor %}
 
 
 						</div>
