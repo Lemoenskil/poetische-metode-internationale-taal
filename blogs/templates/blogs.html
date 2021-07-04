@@ -14,20 +14,21 @@
 							<div class="layout-blog__content">
 								
 								<!--  -->
+								{% for blog in blogs %}
 								<div class="post-01__style-02 md-text-center">
-									<div class="post-01__media"><a href="blog-detail.html"><img src="{% static 'img/blogs/1.jpg' %}" alt=""/></a>
+									<div class="post-01__media"><a href={% url 'blog_detail' blog.id %}><img src="{{blog.image.url}}" alt=""/></a>
 									</div>
 									<div>
 										<ul class="post-01__categories">
-											<li><a href="#">Business</a></li>
+											<li><a href="#">{{blog.tag}}</a></li>
 										</ul>
-										<h2 class="post-01__title"><a href="blog-detail.html">How To Build A Better Website</a></h2>
-										<div class="post-01__time">Nov 20, 2017</div>
-										<div class="post-01__note">by Alice Brooks</div>
+										<h2 class="post-01__title"><a href={% url 'blog_detail' blog.id %}>{{blog.title}}</a></h2>
+										<div class="post-01__time">{{blog.published_date}}</div>
+										<div class="post-01__note">by {{blog.author}}</div>
 									</div>
 								</div><!-- End /  -->
 								
-								
+								{% endfor %}
 								
 								
 								<!-- pagination -->
@@ -39,21 +40,7 @@
 									
 									<!--  -->
 									<div>
-										
-										<!-- widget-text__widget -->
-										<section class="widget-text__widget widget-text__style-02 widget">
-											<h3 class="widget-title">Search</h3>
-											<div class="widget-text__content">
-												
-												<!-- form-search -->
-												<div class="form-search">
-													<form>
-														<input class="form-control" type="text" placeholder="Type and Hit Enter..."/>
-													</form>
-												</div><!-- End / form-search -->
-												
-											</div>
-										</section><!-- End / widget-text__widget -->
+
 																				
 										
 										<!-- widget-text__widget -->

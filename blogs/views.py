@@ -23,10 +23,10 @@ def blog_detail(request, pk):
 #     Or return a 404 error if the post is
 #     not found
 #     """
-#     post = get_object_or_404(Post, pk=pk)
+    blog = get_object_or_404(Blog, pk=pk)
 #     post.views += 1
 #     post.save()
-    return render(request, "blog-detail.html") #, {'blog': blog})
+    return render(request, "blog-detail.html", {'blog': blog})
 
 
 # def create_or_edit_post(request, pk=None):
