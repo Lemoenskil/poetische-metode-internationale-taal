@@ -16,11 +16,15 @@ def index(request):
 
 def about(request):
     """A view that displays the about page"""
-    return render(request, "about.html")
+    blogs = Blog.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+
+    return render(request, "about.html", {'blogs': blogs})
 
 def learning_methode(request):
     """A view that displays the learning_methode page"""
-    return render(request, "learning_methode.html")   
+    blogs = Blog.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+
+    return render(request, "learning_methode.html",{'blogs': blogs})   
 
 def contact(request):
     """A view that displays the contact page"""
