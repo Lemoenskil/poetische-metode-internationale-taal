@@ -21,6 +21,7 @@ from django.conf import settings
 from home.urls import urlpatterns as index_paths
 from poems.urls import urlpatterns as poems_paths
 from blogs.urls import urlpatterns as blogs_paths
+from search.urls import urlpatterns as search_paths
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
 import os
@@ -30,6 +31,7 @@ urlpatterns = [
     re_path(r'',include(index_paths)),
     re_path(r'poems/',include(poems_paths)),
     re_path(r'blogs/', include(blogs_paths)),
+    re_path(r'search/', include(search_paths)),
 ]
 
 USE_S3 = os.getenv('USE_S3') == 'TRUE'
