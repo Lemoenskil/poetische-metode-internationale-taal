@@ -31,9 +31,6 @@
 								{% endfor %}
 								
 								
-								<!-- pagination -->
-								<ul class="pagination"><a class="pagination__item" href="#">1</a><a class="pagination__item" href="#">2</a><a class="pagination__item" href="#">3</a><span class="pagination__item active">4</span>
-								</ul><!-- End / pagination -->
 								
 							</div>
 							<aside class="layout-blog__sidebar">
@@ -45,19 +42,21 @@
 										
 										<!-- widget-text__widget -->
 										<section class="widget-text__widget widget-text__style-04 widget">
-											<h3 class="widget-title">recent post</h3>
+											<h3 class="widget-title">Meest recente blogs</h3>
+											{% for blog in blogs|slice:":2" %}
 											<div class="widget-text__content">
 												
 												<!--  -->
 												<div class="post-01__style-03">
 													<div>
-														<h2 class="post-01__title"><a href="#">Design a Perfect Homepage</a></h2>
-														<div class="post-01__time">Oct 26, 2017</div>
-														<div class="post-01__note">by Alice Brooks</div>
+														<h2 class="post-01__title"><a href="#">{{blog.title}}</a></h2>
+														<div class="post-01__time">{{blog.published_date}}</div>
+														<div class="post-01__note">- {{blog.author}}</div>
 													</div>
 												</div><!-- End /  -->
 												
 											</div>
+											{% endfor %}
 										</section><!-- End / widget-text__widget -->
 										
 										
