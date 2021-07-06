@@ -1,14 +1,18 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Poem, Genre, Author, Country
+from django.utils import timezone
 
 # Create your views here.
 def poems(request):
     """A view that displays the poems page"""
     poems = Poem.objects.all()
+    recent_poems = Poem.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    print(recent_poems)
     genres = Genre.objects.all()
     authors = Author.objects.all()
     countries = Country.objects.all()
     return render(request, "poems.html", {
+        'recent_poems': recent_poems,
         'poems': poems,
         'genres': genres,
         'authors': authors,

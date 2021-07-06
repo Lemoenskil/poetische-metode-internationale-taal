@@ -2790,7 +2790,7 @@ mark, .mark {
     font-size: 16px;
     display: inline-block;
     vertical-align: middle;
-    color: #c2c2c2;
+    color: blueviolet;
 }
 
 .post-01__note {
@@ -2835,7 +2835,7 @@ mark, .mark {
 }
 
 .post-01__style-02 .post-01__categories a {
-    font-size: 14px;
+    font-size: 18px;
     text-transform: capitalize;
 }
 

@@ -26,8 +26,8 @@
 										<ul class="post-01__note">
 											<li><i class="fa fa-user" aria-hidden="true"></i>{{poem.author}}</li>										
 											<li><i class="fa fa-globe" aria-hidden="true"></i>{{poem.author.country_of_birth}}</li>
-											<li><i class="fa fa-calendar-o" aria-hidden="true"></i>{{poem.author.date_of_birth | date:"Y"}} - {{poem.author.date_of_death | date:"Y"}}</li>
-											<li><i class="fa fa-th-large" aria-hidden="true"></i>{{poem.genre}}</li>
+											<!-- <li><i class="fa fa-calendar-o" aria-hidden="true"></i>{{poem.author.date_of_birth | date:"Y"}} - {{poem.author.date_of_death | date:"Y"}}</li>
+											<li><i class="fa fa-th-large" aria-hidden="true"></i>{{poem.genre}}</li> -->
 										</ul>
 	
 										<div class="overflow-hidden">
@@ -47,15 +47,7 @@
 									<div class="col-6 post-01__media"><a href={% url 'single_poem' poem.id %}><img src="{{poem.image.url}}" alt=""/></a>
 									</div>
 								</div><!-- End /  -->
-
 								{% endfor %}	
-
-								<!-- pagination -->
-								<ul class="pagination">
-									<a class="pagination__item" href="#">1</a>
-									<a class="pagination__item" href="#">2</a>
-									<a class="pagination__item" href="#">3</a><span class="pagination__item active">4</span>
-								</ul><!-- End / pagination -->
 								
 							</div>
 							<aside class="layout-blog__sidebar">
@@ -102,43 +94,20 @@
 										
 										<!-- widget-text__widget -->
 										<section class="widget-text__widget widget-text__style-04 widget">
-											<h3 class="widget-title">recent poems</h3>
+											<h3 class="widget-title">Meest recente gedichten</h3>
+											{% for poem in recent_poems|slice:":2" %}
 											<div class="widget-text__content">
-												
-												<!--  -->
 												<div class="post-01__style-03">
 													<div>
-														<h2 class="post-01__title"><a href="#">Design a Perfect Homepage</a></h2>
-														<div class="post-01__time">Oct 26, 2017</div>
-														<div class="post-01__note">by Alice Brooks</div>
+														{% with poem.title.all|first as title %}
+														<h2 class="post-01__title"><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></h2>
+														{% endwith %}
+														<div class="post-01__time">{{poem.published_date}}</div>
+														<div class="post-01__note">- {{poem.author.name}}</div>
 													</div>
-												</div><!-- End /  -->
-												
-												
-												<!--  -->
-												<div class="post-01__style-03">
-													<div>
-														<h2 class="post-01__title"><a href="#">How to Master Microcopy</a></h2>
-														<div class="post-01__time">Oct 28, 2017</div>
-														<div class="post-01__note">by Ann Fowler</div>
-													</div>
-												</div><!-- End /  -->
-												
-												
-										</section><!-- End / widget-text__widget -->
-										
-										
-										<!-- widget-text__widget -->
-										<section class="widget-text__widget widget-text__style-03 widget">
-											<h3 class="widget-title">Archieves</h3>
-											<div class="widget-text__content">
-												<ul>
-													<li><a href="#">June  2017</a></li>
-													<li><a href="#">November  2017</a></li>
-													<li><a href="#">March  2017</a></li>
-													<li><a href="#">July 2017</a></li>
-												</ul>
-											</div>
+												</div>
+											</div>	
+											{% endfor %}	
 										</section><!-- End / widget-text__widget -->
 										
 									</div><!-- End /  -->

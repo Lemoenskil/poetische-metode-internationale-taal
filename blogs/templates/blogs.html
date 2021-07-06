@@ -15,16 +15,16 @@
 								
 								<!--  -->
 								{% for blog in blogs %}
-								<div class="post-01__style-02 md-text-center">
-									<div class="post-01__media"><a href={% url 'blog_detail' blog.id %}><img src="{{blog.image.url}}" alt=""/></a>
+								<div class="post-01__style-02 md-text-center row">
+									<div class="post-01__media col-6"><a href={% url 'blog_detail' blog.id %}><img src="{{blog.image.url}}" alt=""/></a>
 									</div>
-									<div>
+									<div class="col-6">
 										<ul class="post-01__categories">
 											<li><a href="#">{{blog.tag}}</a></li>
 										</ul>
 										<h2 class="post-01__title"><a href={% url 'blog_detail' blog.id %}>{{blog.title}}</a></h2>
 										<div class="post-01__time">{{blog.published_date}}</div>
-										<div class="post-01__note">by {{blog.author}}</div>
+										<div class="post-01__note">- {{blog.author}}</div>
 									</div>
 								</div><!-- End /  -->
 								
