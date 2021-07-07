@@ -7,7 +7,7 @@ from blogs.models import Blog
 def any_model_string_field_containing(model, string, prefix=None):
     prefix = '' if prefix is None else f'{prefix}__'
     fields = [ x for x in model._meta.fields if isinstance(x, CharField) or isinstance(x, TextField) ]
-    queries = [ Q( **{ f'{prefix}{x.name}__contains': string } ) for x in fields ]
+    queries = [ Q( **{ f'{prefix}{x.name}__icontains': string } ) for x in fields ]
     q_any_of = Q()
     for q in queries:
         q_any_of = q_any_of | q
