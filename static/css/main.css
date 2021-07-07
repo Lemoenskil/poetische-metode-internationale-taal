@@ -998,6 +998,10 @@ textarea {
     margin: 0;
 }
 
+.list-style-square {
+    list-style: square;
+}
+
 .image-full img {
     width: 100% !important;
 }

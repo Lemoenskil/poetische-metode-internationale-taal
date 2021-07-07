@@ -46,72 +46,96 @@
 									</div>
 									<div class="col-6 post-01__media"><a href={% url 'single_poem' poem.id %}><img src="{{poem.image.url}}" alt=""/></a>
 									</div>
-								</div><!-- End /  -->
-								{% endfor %}	
-								
+								</div>
+								<!-- End /  -->
+								{% endfor %}
 							</div>
 							<aside class="layout-blog__sidebar">
-									
-									<!--  -->
-									<div>
-										
-										<!-- widget-text__widget -->
-										<section class="widget-text__widget widget-text__style-02 widget">
-											<h3 class="widget-title">categories</h3>
-											<div class="widget-text__content">
-												<ul>
-													<li><a href="#">Genre</a></li>
-													{% for genre in genres %}
-														<li><a href="#">-> {{genre.name}}</a></li>
-														{% for poem in genre.poems.all %}
-															{% with poem.title.all|first as title %}
-																<li><a href={% url 'single_poem' poem.id %}>--> {{title.title}}</a></li>
-															{% endwith %}
-														{% endfor %}
-													{% endfor %}
-													<li><a href="#">Author</a></li>
+								<div>
+									<!-- widget-text__widget -->
+									<section class="widget-text__style-04 widget">
+										<!-- Author dropdown -->
+										<div class="dropdown" data-init="dropdown">
+											<a class="dropdown__toggle widget-title" href="javascript:void(0)">Authors<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+											<div class="dropdown__content" data-position="right">
+												<ul class="list-style-none">
 													{% for author in authors %}
-														<li><a href="#">-> 	{{author.name}}</a></li>
+													<li>{{author.name}}</li>
+													<ul class="list-style-square">
 														{% for poem in author.poems.all %}
-															{% with poem.title.all|first as title %}
-																<li><a href={% url 'single_poem' poem.id %}>--> {{title.title}}</a></li>
-															{% endwith %}
+														{% with poem.title.all|first as title %}
+														<li><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></li>
+														{% endwith %}
 														{% endfor %}
-													{% endfor %}
-													<li><a href="#">Country</a></li>
-													{% for country in countries %}
-														<li><a href="#">-> {{country.name}}</a></li>
-														{% for poem in country.poems.all %}
-															{% with poem.title.all|first as title %}
-																<li><a href={% url 'single_poem' poem.id %}>--> {{title.title}}</a></li>
-															{% endwith %}
-														{% endfor %}
+													</ul>
 													{% endfor %}
 												</ul>
 											</div>
-										</section><!-- End / widget-text__widget -->
-										
-										
-										<!-- widget-text__widget -->
-										<section class="widget-text__widget widget-text__style-04 widget">
-											<h3 class="widget-title">Meest recente gedichten</h3>
-											{% for poem in recent_poems|slice:":2" %}
-											<div class="widget-text__content">
-												<div class="post-01__style-03">
-													<div>
+										</div>
+										<!-- End Author dropdown -->
+
+										<!-- Genre dropdown -->
+										<div class="dropdown" data-init="dropdown">
+											<a class="dropdown__toggle widget-title" href="javascript:void(0)">Genres<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+											<div class="dropdown__content" data-position="right">
+												<ul class="list-style-none">
+													{% for genre in genres %}
+													<li>{{genre.name}}</li>
+													<ul class="list-style-square">
+														{% for poem in genre.poems.all %}
 														{% with poem.title.all|first as title %}
-														<h2 class="post-01__title"><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></h2>
+														<li><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></li>
 														{% endwith %}
-														<div class="post-01__time">{{poem.published_date}}</div>
-														<div class="post-01__note">- {{poem.author.name}}</div>
-													</div>
-												</div>
-											</div>	
-											{% endfor %}	
-										</section><!-- End / widget-text__widget -->
-										
-									</div><!-- End /  -->
+														{% endfor %}
+													</ul>
+													{% endfor %}
+												</ul>
+											</div>
+										</div>
+										<!-- End Genre dropdown -->
+
+										<!-- Country dropdown -->
+										<div class="dropdown" data-init="dropdown">
+											<a class="dropdown__toggle widget-title" href="javascript:void(0)">Countries<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+											<div class="dropdown__content" data-position="right">
+												<ul class="list-style-none">
+													{% for country in countries %}
+													<li>{{country.name}}</li>
+													<ul class="list-style-square">
+														{% for author in country.authors.all %}
+														{% for poem in author.poems.all %}
+														{% with poem.title.all|first as title %}
+														<li><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></li>
+														{% endwith %}
+														{% endfor %}
+														{% endfor %}
+													</ul>
+													{% endfor %}
+												</ul>
+											</div>
+										</div>
+										<!-- End Country dropdown -->	
+									</section>
+									<!-- End / widget-text__widget -->
 									
+									<!-- widget-text__widget -->
+									<section class="widget-text__widget widget-text__style-04 widget">
+										<h3 class="widget-title">Meest recente gedichten</h3>
+										{% for poem in recent_poems|slice:":2" %}
+										<div class="widget-text__content">
+											<div class="post-01__style-03">
+												<div>
+													{% with poem.title.all|first as title %}
+													<h2 class="post-01__title"><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></h2>
+													{% endwith %}
+													<div class="post-01__time">{{poem.published_date}}</div>
+													<div class="post-01__note">- {{poem.author.name}}</div>
+												</div>
+											</div>
+										</div>	
+										{% endfor %}	
+									</section><!-- End / widget-text__widget -->
+								</div><!-- End /  -->
 							</aside>
 						</div><!-- End / layout-blog sidebar-left -->
 						

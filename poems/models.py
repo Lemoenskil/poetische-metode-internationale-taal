@@ -32,8 +32,8 @@ class Author(models.Model):
     )
     date_of_birth = models.DateField(default=datetime.date.today)
     date_of_death = models.DateField(blank=True, null=True)
-    country_of_birth = models.ForeignKey(Country, related_name='country_of_birth', on_delete=models.CASCADE, null=True)
-    portrait = FilerImageField(related_name='portrait', null=True, blank=True, on_delete=models.SET_NULL)
+    country_of_birth = models.ForeignKey(Country, related_name='authors', on_delete=models.CASCADE, null=True)
+    portrait = FilerImageField(related_name='authors', null=True, blank=True, on_delete=models.SET_NULL)
     abstract = TranslatedField(
         models.TextField(_("abstract"), default='')
     )
@@ -46,7 +46,7 @@ class Poem(models.Model):
     author = models.ForeignKey(Author, related_name='poems', on_delete=models.CASCADE)
     genre = models.ForeignKey(Genre, related_name='poems', on_delete=models.CASCADE, null=True)
     published_date = models.DateTimeField(default=timezone.now)
-    image = FilerImageField(related_name='image', null=True, blank=True, on_delete=models.SET_NULL)
+    image = FilerImageField(related_name='poems', null=True, blank=True, on_delete=models.SET_NULL)
     abstract = TranslatedField(
         models.TextField(_("abstract"), default='')
     )
