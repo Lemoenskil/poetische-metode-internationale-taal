@@ -148,6 +148,7 @@ LANGUAGES = [
     ('eo', _('Esperanto')),
     ('nl', _('Nederlands')),
     ('org', _('Original')),
+    ('en', _('Engels')),
 ]
 
 # Static files (CSS, JavaScript, Images)
