@@ -48,7 +48,7 @@ class Poem(models.Model):
     published_date = models.DateTimeField(default=timezone.now)
     image = FilerImageField(related_name='poems', null=True, blank=True, on_delete=models.SET_NULL)
     abstract = TranslatedField(
-        models.TextField(_("abstract"), default='')
+        models.TextField(_("abstract"), default='', blank=True)
     )
 
     def __str__(self):
