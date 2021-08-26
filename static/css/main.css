@@ -99,6 +99,10 @@ img {
     }
 }
 
+.featured_content_snippet {
+    min-height: 160px;
+}
+
 .md-text-left, .text-left {
     text-align: left !important;
 }
