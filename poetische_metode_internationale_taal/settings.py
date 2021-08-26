@@ -37,6 +37,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
     'poetische-metode-international.herokuapp.com',
+    'www.lingvo.nu',
 ]
 
 
