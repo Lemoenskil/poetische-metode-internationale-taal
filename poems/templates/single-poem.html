@@ -41,10 +41,10 @@
 								<div style="padding: 0px;" class="container">
 									<div class="row stanza">
 										{% for line in stanza.lines.all %}
-										<div style="text-align: right;" class="col-xl-6 col-sm-6 col-md-6 col-lg-6 hint">
+										<div style="text-align: right;" class="col-xl-6 hint">
 											{{line.line}}
 										</div>
-										<div style="text-align: left;" class="col-xl-6 col-sm-6 col-md-6 col-lg-6">
+										<div style="text-align: left;" class="col-xl-6">
 											{% language "eo" %}
 											{{line.line}}
 											{% endlanguage %}
