@@ -8,68 +8,156 @@
 
 <!-- Content-->
 <div class="md-content">
-	<div class="consult-postDetail">
+	<div class="layout-blog sidebar-left">
+		<div class="layout-blog__content">
+			<div class="consult-postDetail">	
+				<div class="consult-postDetail"></div>
+				<div class="container">
+					<div class="consult-postDetail__main">		
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="consult-postDetail__content">
+									<div style="margin: 0px;"class="row">
+										<div class="image-full col-12"><img src="{{poem.image.url}}" alt=""></div>
+										<div class="col-12">
+											{% with poem.title.all|first as title %}
+											<h1>{{title.title}}</h1>
+											{% endwith %}
+											<ul class="consult-postDetail__meta">
+												<li><i class="fa fa-user" aria-hidden="true"></i>{{poem.author}}</li>										
+												<li><i class="fa fa-globe" aria-hidden="true"></i>{{poem.author.country_of_birth}}</li>
+												<li><i class="fa fa-calendar-o" aria-hidden="true"></i>{{poem.author.date_of_birth | date:"Y"}} - {{poem.author.date_of_death | date:"Y"}}</li>
+												<li><i class="fa fa-th-large" aria-hidden="true"></i>{{poem.genre}}</li>
+											</ul>
+										</div>
+										<div class="col-xl-12">
+										<p class="text">{{poem.abstract | linebreaks}}</p>
+										</div>
+									</div>
 
-		<div class="consult-postDetail"></div>
-		<div class="container">
-			<div class="consult-postDetail__main">
-				
+									{% for stanza in poem.stanzas.all %}
+										<div style="padding: 0px;" class="container">
+											<div class="row stanza">
+												{% for line in stanza.lines.all %}
+												<div style="text-align: right;" class="col-xl-6 col-md-6 col-sm-6 col-6  hint">
+													{{line.line}}
+												</div>
+												<div style="text-align: left;" class="col-xl-6 col-md-6 col-sm-6 col-6 ">
+													{% language "eo" %}
+													{{line.line}}
+													{% endlanguage %}
+												</div>
+												{% endfor %}
+											</div>
+											<p class="text" />
+										</div>	
+									{% endfor %}
 
-				
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="consult-postDetail__content">
-							<div style="margin: 0px;"class="row">
-								<div class="image-full col-12"><img src="{{poem.image.url}}" alt=""></div>
-								<div class="col-12">
-									{% with poem.title.all|first as title %}
-									<h1>{{title.title}}</h1>
-									{% endwith %}
-									<ul class="consult-postDetail__meta">
-										<li><i class="fa fa-user" aria-hidden="true"></i>{{poem.author}}</li>										
-										<li><i class="fa fa-globe" aria-hidden="true"></i>{{poem.author.country_of_birth}}</li>
-										<li><i class="fa fa-calendar-o" aria-hidden="true"></i>{{poem.author.date_of_birth | date:"Y"}} - {{poem.author.date_of_death | date:"Y"}}</li>
-										<li><i class="fa fa-th-large" aria-hidden="true"></i>{{poem.genre}}</li>
-									</ul>
-								</div>
-								<div class="col-xl-12">
-								<p class="text">{{poem.abstract | linebreaks}}</p>
+									<blockquote>
+										<a name="author">{{poem.author.name}}, {{poem.author.country_of_birth}}, {{poem.author.date_of_birth | date:"Y"}} - {{poem.author.date_of_death | date:"Y"}}</a>
+										<div class="author_and_image">
+											{% if poem.author.portrait %}
+												<img src="{{poem.author.portrait.url}}" alt=""/>
+											{% endif %}
+											<p>{{poem.author.abstract | linebreaks}}</p>
+										</div>
+									</blockquote>
 								</div>
 							</div>
-
-							{% for stanza in poem.stanzas.all %}
-								<div style="padding: 0px;" class="container">
-									<div class="row stanza">
-										{% for line in stanza.lines.all %}
-										<div style="text-align: right;" class="col-xl-6 col-md-6 col-sm-6 col-6  hint">
-											{{line.line}}
-										</div>
-										<div style="text-align: left;" class="col-xl-6 col-md-6 col-sm-6 col-6 ">
-											{% language "eo" %}
-											{{line.line}}
-											{% endlanguage %}
-										</div>
-										{% endfor %}
-									</div>
-									<p class="text" />
-								</div>	
-							{% endfor %}
-
-							<blockquote>
-								<a name="author">{{poem.author.name}}, {{poem.author.country_of_birth}}, {{poem.author.date_of_birth | date:"Y"}} - {{poem.author.date_of_death | date:"Y"}}</a>
-								<div class="author_and_image">
-									{% if poem.author.portrait %}
-										<img src="{{poem.author.portrait.url}}" alt=""/>
-									{% endif %}
-									<p>{{poem.author.abstract | linebreaks}}</p>
-								</div>
-							</blockquote>
-						</div>
+						</div>	
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>	
+		<aside class="layout-blog__sidebar">
+			<div>
+				<!-- widget-text__widget -->
+				<section class="widget-text__style-04 widget">
+					<!-- Author dropdown -->
+					<div class="dropdown" data-init="dropdown">
+						<a class="dropdown__toggle widget-title" href="javascript:void(0)">Authors<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+						<div class="dropdown__content" data-position="right">
+							<ul class="list-style-none">
+								{% for author in authors %}
+								<li>{{author.name}}</li>
+								<ul class="list-style-square">
+									{% for poem in author.poems.all %}
+									{% with poem.title.all|first as title %}
+									<li><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></li>
+									{% endwith %}
+									{% endfor %}
+								</ul>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					<!-- End Author dropdown -->
+
+					<!-- Genre dropdown -->
+					<div class="dropdown" data-init="dropdown">
+						<a class="dropdown__toggle widget-title" href="javascript:void(0)">Genres<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+						<div class="dropdown__content" data-position="right">
+							<ul class="list-style-none">
+								{% for genre in genres %}
+								<li>{{genre.name}}</li>
+								<ul class="list-style-square">
+									{% for poem in genre.poems.all %}
+									{% with poem.title.all|first as title %}
+									<li><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></li>
+									{% endwith %}
+									{% endfor %}
+								</ul>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					<!-- End Genre dropdown -->
+
+					<!-- Country dropdown -->
+					<div class="dropdown" data-init="dropdown">
+						<a class="dropdown__toggle widget-title" href="javascript:void(0)">Countries<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+						<div class="dropdown__content" data-position="right">
+							<ul class="list-style-none">
+								{% for country in countries %}
+								<li>{{country.name}}</li>
+								<ul class="list-style-square">
+									{% for author in country.authors.all %}
+									{% for poem in author.poems.all %}
+									{% with poem.title.all|first as title %}
+									<li><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></li>
+									{% endwith %}
+									{% endfor %}
+									{% endfor %}
+								</ul>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					<!-- End Country dropdown -->	
+				</section>
+				<!-- End / widget-text__widget -->
+				
+				<!-- widget-text__widget -->
+				<section class="widget-text__widget widget-text__style-04 widget">
+					<h3 class="widget-title">Meest recente gedichten</h3>
+					{% for poem in recent_poems|slice:":2" %}
+					<div class="widget-text__content">
+						<div class="post-01__style-03">
+							<div>
+								{% with poem.title.all|first as title %}
+								<h2 class="post-01__title"><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></h2>
+								{% endwith %}
+								<div class="post-01__time">{{poem.published_date}}</div>
+								<div class="post-01__note">- {{poem.author.name}}</div>
+							</div>
+						</div>
+					</div>	
+					{% endfor %}	
+				</section><!-- End / widget-text__widget -->
+			</div><!-- End /  -->
+		</aside>
+	
+	</div><!-- End / layout-blog sidebar-left -->	
 </div>
 <!-- End / Content-->
 
