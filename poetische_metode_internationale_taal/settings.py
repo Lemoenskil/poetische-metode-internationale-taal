@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'storages',
     'easy_thumbnails',
     'filer',
+    'polymorphic',
     'mptt',
     'nested_admin',
     'home',
