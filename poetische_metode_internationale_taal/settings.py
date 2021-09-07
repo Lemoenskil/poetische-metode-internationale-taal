@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'poems',
     'blogs',
     'search',
+    'wordlist',
 ]
 
 urlpatterns = [
