@@ -2,6 +2,7 @@
 
 {% load static %}
 {% load i18n %}
+{% load filter_first_letter %}
 
 {% block content %}
 
@@ -13,62 +14,44 @@
     <div class="consult-postDetail__main">
       <div class="row">
         <div class="col-lg-12">
+          {% for acronym in acronyms %}
           <div class="consult-postDetail__content">
             <div style="margin: 0px;" class="row">
               <div class="col-12">
-                <h1>ĉ</h1>
+                <h1>{{acronym.first_letter}}</h1>
               </div>
             </div>
             <div style="margin: 0px;" class="container">
               <div class="row">
+                {% for part_of_speech in parts_of_speech %}
                 <div class="col-xl-4 col-md-4 col-sm-4 col-4">
                   <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th colspan="2" style="text-align: center;">zelfstandig naamwoorden</th>
+                        <th colspan="2" style="text-align: center;">{{part_of_speech.name}}</th>
                       </tr>
                     </thead>
                     <tbody>
+                      {% for word in part_of_speech.words.all|filter_first_letter:acronym.first_letter %}
                       <tr>
-                        <td style="text-align: center">Ĉambro</th>
-                        <td style="text-align: center">Kamer</td>
+                        <td style="text-align: center">
+                          {% language "eo" %}
+                          {{word.word}}
+                          {% endlanguage %}
+                        </th>
+                        <td style="text-align: center">
+                          {{word.word}}
+                        </td>
                       </tr>
+                      {% endfor %}
                     </tbody>
                   </table>
                 </div>
-                <div class="col-xl-4 col-md-4 col-sm-4 col-4 ">
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th colspan="2" style="text-align: left;">overige woorden</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td style="text-align: center">ĉar</th>
-                        <td style="text-align: center">want</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="col-xl-4 col-md-4 col-sm-4 col-4">
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th colspan="2" style="text-align: center">werkwoorden</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td style="text-align: center">ĉarmi</th>
-                        <td style="text-align: center">bekoren</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                {% endfor %}
               </div>
             </div>
           </div>
+          {% endfor %}
         </div>
       </div>
     </div>
