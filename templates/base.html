@@ -28,7 +28,7 @@
 			<!-- header -->
 			<header class="header">
 				<div class="container">
-					<div class="header__logo"><a href="/"><img src="{% static 'img/logo.png' %}" alt=""/></a></div>
+					<div class="header__logo"><a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""/></a></div>
 					<div class="header__toogleGroup">
 						<div class="header__chooseLanguage">
 										
@@ -100,7 +100,7 @@
 				<div class="footer__main">
 					<div class="row row-eq-height">
 						<div class="col-8 col-sm-7 col-md-9 col-lg-3 ">
-							<div class="footer__item"><a class="consult_logo" href="#"><img src="{% static 'img/logo.png' %}" alt=""/></a>
+							<div class="footer__item"><a class="consult_logo" href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""/></a>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 offset-0 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-1 ">
@@ -110,8 +110,8 @@
 									<section class="widget-text__widget widget">
 										<div class="widget-text__content">
 											<ul>
-												<li><a href="#">Home</a></li>
-												<li><a href="#">About</a></li>
+												<li><a href="{% url 'index' %}">Home</a></li>
+												<li><a href="{% url 'about' %}">Over</a></li>
 											</ul>
 										</div>
 									</section><!-- End / widget-text__widget -->
@@ -125,8 +125,8 @@
 									<section class="widget-text__widget widget">
 										<div class="widget-text__content">
 											<ul>
-												<li><a href="#">Link to humblart </a></li>
-												<li><a href="#">Contact </a></li>
+												<!-- <li><a href="#">Link to humblart </a></li> -->
+												<li><a href="{% url 'contact' %}">Contact </a></li>
 
 											</ul>
 										</div>
