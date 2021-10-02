@@ -2,7 +2,6 @@
 
 {% load static %}
 {% load i18n %}
-{% load filter_first_letter %}
 
 {% block content %}
 
@@ -23,31 +22,56 @@
             </div>
             <div style="margin: 0px;" class="container">
               <div class="row">
-                {% for part_of_speech in parts_of_speech %}
-                <div class="col-xl-4 col-md-4 col-sm-4 col-4">
-                  <table class="table table-bordered">
+                <div class="">
+                  <table class="table table-bordered" style="width: 1024px;">
                     <thead>
                       <tr>
-                        <th colspan="2" style="text-align: center;">{{part_of_speech.name}}</th>
+                        <th colspan="2" style="text-align: center; width: 33%;">zelfstanding naamwoorden</th>
+                        <th colspan="2" style="text-align: center; width: 33%;">overige woorden</th>
+                        <th colspan="2" style="text-align: center; width: 33%;">werkwoorden</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {% for word in part_of_speech.words.all|filter_first_letter:acronym.first_letter %}
+                      {% for word_group in acronym.word_groups.all %}
                       <tr>
-                        <td style="text-align: center">
+                        {% with word_group.noun.all|first as noun %}
+                        <!-- Noun -->
+                        <td style="text-align: right" class="wordlist-left-cell">
                           {% language "eo" %}
-                          {{word.word}}
+                          {{noun.noun}}
                           {% endlanguage %}
-                        </th>
-                        <td style="text-align: center">
-                          {{word.word}}
                         </td>
+                        <td style="text-align: left" class="wordlist-right-cell">
+                          {{noun.noun}}
+                        </td>
+                        {% endwith %}
+                        <!-- Miscellaneous -->
+                        {% with word_group.misc.all|first as misc %}
+                        <td style="text-align: right" class="wordlist-left-cell">
+                          {% language "eo" %}
+                          {{misc.misc}}
+                          {% endlanguage %}
+                        </td>
+                        <td style="text-align: left" class="wordlist-right-cell">
+                          {{misc.misc}}
+                        </td>
+                        {% endwith %}
+                        <!-- Verb -->
+                        {% with word_group.verb.all|first as verb %}
+                        <td style="text-align: right" class="wordlist-left-cell">
+                          {% language "eo" %}
+                          {{verb.verb}}
+                          {% endlanguage %}
+                        </td>
+                        <td style="text-align: left" class="wordlist-right-cell">
+                          {{verb.verb}}
+                        </td>
+                        {% endwith %}
                       </tr>
                       {% endfor %}
                     </tbody>
                   </table>
                 </div>
-                {% endfor %}
               </div>
             </div>
           </div>

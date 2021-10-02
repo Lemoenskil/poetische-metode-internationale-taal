@@ -9,23 +9,24 @@ class Acronym(models.Model):
     def __str__(self):
         return self.first_letter
 
-class PartOfSpeach(models.Model):
-    name = TranslatedField(
-        models.CharField(_("name"), max_length=254, default='')
+class WordGroup(models.Model):
+    acronym = models.ForeignKey(Acronym, related_name='word_groups', on_delete=models.CASCADE, null=True)
+
+class Noun(models.Model):
+    word_group = models.ForeignKey(WordGroup, related_name='noun', on_delete=models.CASCADE, null=True)
+    noun = TranslatedField(
+        models.CharField(_("word"), max_length=254, default='', blank=True)
     )
 
-    class Meta:
-        verbose_name_plural = "PartsOfSpeach"
-
-    def __str__(self):
-        return self.name
-
-class Word(models.Model):
-    word = TranslatedField(
-        models.CharField(_("word"), max_length=254, default='')
+class Misc(models.Model):
+    word_group = models.ForeignKey(WordGroup, related_name='misc', on_delete=models.CASCADE, null=True)
+    misc = TranslatedField(
+        models.CharField(_("word"), max_length=254, default='', blank=True)
     )
-    acronym = models.ForeignKey(Acronym, related_name='words', on_delete=models.CASCADE, null=True)
-    part_of_speach = models.ForeignKey(PartOfSpeach, related_name='words', on_delete=models.CASCADE, null=True)
 
-    def __str__(self):
-        return self.word
+class Verb(models.Model):
+    word_group = models.ForeignKey(WordGroup, related_name='verb', on_delete=models.CASCADE, null=True)
+    verb = TranslatedField(
+        models.CharField(_("word"), max_length=254, default='', blank=True)
+    )
+
