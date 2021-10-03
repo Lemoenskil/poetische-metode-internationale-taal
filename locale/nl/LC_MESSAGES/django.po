@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-03 19:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: home/templates/index.html:117
+msgid "LearnNewLanguage"
+msgstr "Leer een nieuwe taal door poëzie"
+
+#: poems/models.py:11 poems/models.py:19 poems/models.py:31
+msgid "name"
+msgstr "Naam"
+
+#: poems/models.py:38 poems/models.py:51
+msgid "abstract"
+msgstr "Abstract"
+
+#: poems/models.py:63
+msgid "title"
+msgstr "Titel"
+
+#: poems/models.py:74
+msgid "line"
+msgstr "Lijn"
+
+#: poetische_metode_internationale_taal/settings.py:153
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#: poetische_metode_internationale_taal/settings.py:154
+msgid "Nederlands"
+msgstr "Nederlands"
+
+#: poetische_metode_internationale_taal/settings.py:155
+msgid "Original"
+msgstr "Origineel"
+
+#: poetische_metode_internationale_taal/settings.py:156
+msgid "Engels"
+msgstr "Engels"
+
+#: templates/base.html:71
+msgid "About"
+msgstr "Over"
+
+#: templates/base.html:73
+msgid "LearningMethod"
+msgstr "Leer Methode"
+
+#: templates/base.html:75
+msgid "WordList"
+msgstr "Woordenlijst"
+
+#: templates/base.html:77
+msgid "Poems"
+msgstr "Poëzie"
+
+#: templates/base.html:83
+msgid "Blogs"
+msgstr "Blogs"
+
+#: templates/base.html:85
+msgid "Contact"
+msgstr "Contact"
+
+#: wordlist/models.py:7
+msgid "first_letter"
+msgstr "Eerste Letter"
+
+#: wordlist/models.py:18 wordlist/models.py:24 wordlist/models.py:30
+msgid "word"
+msgstr "Woord"

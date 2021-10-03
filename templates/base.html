@@ -1,4 +1,7 @@
 {% load static %}
+{% load i18n %}
+{% load in_list %}
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -32,16 +35,20 @@
 					<div class="header__toogleGroup">
 						<div class="header__chooseLanguage">
 										
-										<!-- dropdown -->
-										<div class="dropdown" data-init="dropdown"><a class="dropdown__toggle" href="javascript:void(0)">EN <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-											<div class="dropdown__content" data-position="right">
-												<ul class="list-style-none">
-													<li><a href="#">EN</a></li>
-													<li><a href="#">NL</a></li>
-													<!-- <li><a href="#">VI</a></li> -->
-												</ul>
-											</div>
-										</div><!-- End / dropdown -->
+							<!-- dropdown -->
+							{% get_available_languages as LANGUAGES %}
+							{% get_current_language as LANGUAGE_CODE %}
+							<div class="dropdown" data-init="dropdown"><a class="dropdown__toggle" href="javascript:void(0)">{{ LANGUAGE_CODE|upper }}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+								<div class="dropdown__content" data-position="right">
+									<ul class="list-style-none">
+										{% for language in LANGUAGES %}
+										{% if not language.0|in_list:'eo,org' %}
+										<li><a href="#">{{ language.0|upper }}</a></li>
+										{% endif %}
+										{% endfor %}
+									</ul>
+								</div>
+							</div><!-- End / dropdown -->
 										
 						</div>
 						<div class="search-form">
@@ -67,21 +74,21 @@
 						<ul class="consult-menu">
 							<li class="current-menu-item"><a href={% url 'index' %}>Home</a>
 							</li>
-							<li><a href={% url 'about' %}>Over</a>
+							<li><a href={% url 'about' %}>{% trans 'About' %}</a>
 							</li>
-							<li><a href={% url 'learning_methode' %}>Leer Methode</a>
+							<li><a href={% url 'learning_methode' %}>{% trans 'LearningMethod' %}</a>
 							</li>
-							<li><a href={% url 'wordlist' %}>Woordenlijst</a>
+							<li><a href={% url 'wordlist' %}>{% trans 'WordList' %}</a>
 							</li>
-							<li><a href={% url 'poems' %}>Poëzie</a>
+							<li><a href={% url 'poems' %}>{% trans 'Poems' %}</a>
 								<!-- <ul class="sub-menu">
 									<li><a href="blog-detail.html">Brows Poetry</a> 
 									</li>
 								</ul>  -->
 							</li>
-							<li><a href={% url 'get_blogs' %}>Blogs</a>
+							<li><a href={% url 'get_blogs' %}>{% trans 'Blogs' %}</a>
 							</li>
-							<li><a href={% url 'contact' %}>Contact</a>
+							<li><a href={% url 'contact' %}>{% trans 'Contact' %}</a>
 							</li>
 						</ul><!-- consult-menu -->
 						
