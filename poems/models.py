@@ -65,9 +65,13 @@ class Title(models.Model):
 
 class Stanza(models.Model):
     poem = models.ForeignKey(Poem, related_name='stanzas', on_delete=models.CASCADE)
+    class Meta(object):
+        ordering = ['pk']
 
 class Line(models.Model):
     stanza = models.ForeignKey(Stanza, related_name='lines', on_delete=models.CASCADE)
     line = TranslatedField(
         models.CharField(_("line"), max_length=1024, default='')
     )
+    class Meta(object):
+        ordering = ['pk']
