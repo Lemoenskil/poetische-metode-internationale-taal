@@ -4730,10 +4730,12 @@ mark, .mark {
 }
 
 .wordlist-left-cell {
-    padding: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
     border-right: 1px solid #777;
 }
 
 .wordlist-right-cell {
-    padding: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
