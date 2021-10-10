@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-10 12:04+0000\n"
+"POT-Creation-Date: 2021-10-10 16:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: home/templates/index.html:55 home/templates/index.html:94
+#: home/templates/index.html:205
+msgid "Readmore"
+msgstr "Read more ..."
+
 #: home/templates/index.html:117
 msgid "LearnNewLanguage"
 msgstr "Learn a new language through poetry"
+
+#: home/templates/index.html:118
+msgid "LearnNewLanguageSum"
+msgstr ""
+"A new language requires a new method. In 2021 A Poetic Language Method "
+"appeared at Humble Art"
 
 #: home/templates/index.html:131
 msgid "NewWordsAndSentences"
@@ -28,7 +39,41 @@ msgstr "New words &amp; sentences"
 
 #: home/templates/index.html:132
 msgid "NewWordsAndSentencesSummary"
-msgstr "The poems offer a small story from which you learn words and phrases that matter to you."
+msgstr ""
+"The poems offer a small story from which you learn words and phrases that "
+"matter to you."
+
+#: home/templates/index.html:143
+msgid "Easytorepeat"
+msgstr "Easy to repeat"
+
+#: home/templates/index.html:144
+msgid "Easytorepeatsum"
+msgstr "The poet manages to present a subject in a few sentences that is interesting enough to keep repeating."
+
+#: home/templates/index.html:155
+msgid "RapidProgress"
+msgstr "Rapid Progress"
+
+#: home/templates/index.html:156
+msgid "RapidProgressSum"
+msgstr "This method is fun and if you make it your own, you will notice the result very soon."
+
+#: home/templates/index.html:167
+msgid "Personalized"
+msgstr "Personalized"
+
+#: home/templates/index.html:167
+msgid "Uniqe"
+msgstr "unique"
+
+#: home/templates/index.html:168
+msgid "PersonalizedSum"
+msgstr "Research shows that one's own finds are recorded faster and better in the memory."
+
+#: home/templates/index.html:188
+msgid "Meestrecenteblogs"
+msgstr "Most recent blogs"
 
 #: poems/models.py:11 poems/models.py:19 poems/models.py:31
 msgid "name"
@@ -62,7 +107,7 @@ msgstr "Original"
 msgid "Engels"
 msgstr "English"
 
-#: templates/base.html:75
+#: templates/base.html:75 templates/base.html:113
 msgid "About"
 msgstr "About"
 
@@ -82,7 +127,7 @@ msgstr "Poems"
 msgid "Blogs"
 msgstr "Blogs"
 
-#: templates/base.html:85
+#: templates/base.html:85 templates/base.html:126
 msgid "Contact"
 msgstr "Contact"
 

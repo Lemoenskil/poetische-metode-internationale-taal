@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-10 12:04+0000\n"
+"POT-Creation-Date: 2021-10-10 16:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: home/templates/index.html:55 home/templates/index.html:94
+#: home/templates/index.html:205
+msgid "Readmore"
+msgstr "Lees verder ..."
+
 #: home/templates/index.html:117
 msgid "LearnNewLanguage"
 msgstr "Leer een nieuwe taal door poëzie"
+
+#: home/templates/index.html:118
+msgid "LearnNewLanguageSum"
+msgstr ""
+"Een nieuwe taal vraagt om een nieuwe methode.  In 2021 verscheen Een  "
+"poëtische taalmethode bij Humble Art"
 
 #: home/templates/index.html:131
 msgid "NewWordsAndSentences"
@@ -28,7 +39,41 @@ msgstr "Nieuwe woorden &amp; zinnen"
 
 #: home/templates/index.html:132
 msgid "NewWordsAndSentencesSummary"
-msgstr "De gedichten bieden een klein verhaaltje waarvan je woorden en zinnen leert die er voor jou toe doen."
+msgstr ""
+"De gedichten bieden een klein verhaaltje waarvan je woorden en zinnen leert "
+"die er voor jou toe doen."
+
+#: home/templates/index.html:143
+msgid "Easytorepeat"
+msgstr "Makkelijk te herhalen"
+
+#: home/templates/index.html:144
+msgid "Easytorepeatsum"
+msgstr "De dichter weet in enkele zinnen een onderwerp neer te zetten dat interessant genoeg is om te blijven herhalen."
+
+#: home/templates/index.html:155
+msgid "RapidProgress"
+msgstr "Snelle Vooruitgang"
+
+#: home/templates/index.html:156
+msgid "RapidProgressSum"
+msgstr "Deze methode is er leuk en dat je het je eigen maakt, zul jie het resultaat heel znel merken."
+
+#: home/templates/index.html:167
+msgid "Personalized"
+msgstr "Gepersonaliseerd"
+
+#: home/templates/index.html:167
+msgid "Uniqe"
+msgstr "uniek"
+
+#: home/templates/index.html:168
+msgid "PersonalizedSum"
+msgstr "Uit onderzoek blijkt dat eigen vondsten sneller en beter in het geheugen worden opgenomen."
+
+#: home/templates/index.html:188
+msgid "Meestrecenteblogs"
+msgstr "Meest recente blogs"
 
 #: poems/models.py:11 poems/models.py:19 poems/models.py:31
 msgid "name"
@@ -62,7 +107,7 @@ msgstr "Origineel"
 msgid "Engels"
 msgstr "Engels"
 
-#: templates/base.html:75
+#: templates/base.html:75 templates/base.html:113
 msgid "About"
 msgstr "Over"
 
@@ -82,7 +127,7 @@ msgstr "Poëzie"
 msgid "Blogs"
 msgstr "Blogs"
 
-#: templates/base.html:85
+#: templates/base.html:85 templates/base.html:126
 msgid "Contact"
 msgstr "Contact"
 
