@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-10 16:18+0000\n"
+"POT-Creation-Date: 2021-10-10 16:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,36 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: home/templates/about.html:19 templates/base.html:75 templates/base.html:113
+msgid "About"
+msgstr "About"
+
+#: home/templates/about.html:20
+msgid "MyStory"
+msgstr "My story"
+
+#: home/templates/about.html:21
+msgid "MyStorySum"
+msgstr ""
+"There is one way to learn all languages. Karina has always known. While "
+"studying Dutch she was introduced to the transformational generative grammar "
+"of Noam Chomski. Much was expected at that time, they were on to something. "
+"One could understand something of language, that which is completely our own "
+"and yet completely mysterious. The transformational generative grammar "
+"stated that everyone has an innate universal language ability. A foray from "
+"language to physics, biology, humanity, pedagogy aroused curiosity. The "
+"practice of the language learning process repeats itself a number of times "
+"in life when one wants to learn a new language. Karina learned it well once, "
+"French at the teacher academy and then made several attempts to learn other "
+"languages. At the end of her teaching career she was introduced to "
+"Esperanto. She was immediately charmed. So many beautiful words, sounds, a "
+"simple grammar, without exceptions, free word order. After working through "
+"some self-study methods, she started translating poems. These little "
+"language gems of her own choosing continued to occupy her, so she mastered "
+"the language. Eventually she came up with the idea of ​​putting some of them "
+"together, providing them with a simple overview of the grammar, and thus the "
+"'poetic language method' was born."
 
 #: home/templates/index.html:55 home/templates/index.html:94
 #: home/templates/index.html:205
@@ -49,7 +79,9 @@ msgstr "Easy to repeat"
 
 #: home/templates/index.html:144
 msgid "Easytorepeatsum"
-msgstr "The poet manages to present a subject in a few sentences that is interesting enough to keep repeating."
+msgstr ""
+"The poet manages to present a subject in a few sentences that is interesting "
+"enough to keep repeating."
 
 #: home/templates/index.html:155
 msgid "RapidProgress"
@@ -57,7 +89,9 @@ msgstr "Rapid Progress"
 
 #: home/templates/index.html:156
 msgid "RapidProgressSum"
-msgstr "This method is fun and if you make it your own, you will notice the result very soon."
+msgstr ""
+"This method is fun and if you make it your own, you will notice the result "
+"very soon."
 
 #: home/templates/index.html:167
 msgid "Personalized"
@@ -69,7 +103,9 @@ msgstr "unique"
 
 #: home/templates/index.html:168
 msgid "PersonalizedSum"
-msgstr "Research shows that one's own finds are recorded faster and better in the memory."
+msgstr ""
+"Research shows that one's own finds are recorded faster and better in the "
+"memory."
 
 #: home/templates/index.html:188
 msgid "Meestrecenteblogs"
@@ -106,10 +142,6 @@ msgstr "Original"
 #: poetische_metode_internationale_taal/settings.py:157
 msgid "Engels"
 msgstr "English"
-
-#: templates/base.html:75 templates/base.html:113
-msgid "About"
-msgstr "About"
 
 #: templates/base.html:77
 msgid "LearningMethod"
