@@ -1,13 +1,19 @@
 from django.db import models
 from django.utils import timezone
 from filer.fields.image import FilerImageField
+from translated_fields import TranslatedField
+from django.utils.translation import gettext_lazy as _
 
 class Blog(models.Model):
     """
     A single Blog post
     """
-    title = models.CharField(max_length=200)
-    content = models.TextField()
+    title = TranslatedField(
+        models.CharField(_("title"), max_length=254, default='', blank=True)
+    )
+    content = TranslatedField(
+        models.TextField(_("content"), default='', blank=True)
+    )
     created_date = models.DateTimeField(auto_now_add=True)
     published_date = models.DateTimeField(default=timezone.now)
     author = models.CharField(max_length=30)
