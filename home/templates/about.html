@@ -39,7 +39,7 @@
 								
 								<!-- title-01 -->
 								<div class="title-01">
-									<h2 class="title-01__title">Meest recente blogs</h2>
+									<h2 class="title-01__title">{% trans 'Meestrecenteblogs' %}</h2>
 								</div><!-- End / title-01 -->
 								
 							</div>
@@ -56,7 +56,7 @@
 										<h2 class="post-02__title"><a href="#">{{blog.title}}</a></h2>
 										<div class="post-02__department">{{blog.tag}}</div>
 										<div class="post-02__content">
-											<div class="post-02__description">{{blog.content|truncatewords:15}}</div><a class="post-02__link" href="{% url 'blog_detail' blog.id %}">Lees verder</a>
+											<div class="post-02__description">{{blog.content|truncatewords:15}}</div><a class="post-02__link" href="{% url 'blog_detail' blog.id %}">{% trans 'Readmore' %}</a>
 										</div>
 									</div>
 								</div><!-- End / post-02 -->
