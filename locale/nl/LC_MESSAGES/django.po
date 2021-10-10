@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-10 18:16+0000\n"
+"POT-Creation-Date: 2021-10-10 18:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,7 @@ msgstr "Meest recente blogs"
 
 #: home/templates/about.html:59 home/templates/index.html:55
 #: home/templates/index.html:94 home/templates/index.html:205
-#: home/templates/learning_methode.html:115
+#: home/templates/learning_methode.html:115 poems/templates/poems.html:43
 msgid "Readmore"
 msgstr "Lees verder ..."
 
@@ -189,6 +189,22 @@ msgstr "Titel"
 #: poems/models.py:74
 msgid "line"
 msgstr "Lijn"
+
+#: poems/templates/poems.html:59
+msgid "Poet"
+msgstr "Dichter"
+
+#: poems/templates/poems.html:79
+msgid "Genres"
+msgstr "Genres"
+
+#: poems/templates/poems.html:99
+msgid "Country"
+msgstr "Landen"
+
+#: poems/templates/poems.html:123
+msgid "RecentPoems"
+msgstr "Meest recente gedichten"
 
 #: poetische_metode_internationale_taal/settings.py:154
 msgid "Esperanto"
