@@ -17,6 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls.conf import include, path, re_path
+from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings           
 from home.urls import urlpatterns as index_paths
 from poems.urls import urlpatterns as poems_paths
@@ -27,14 +28,15 @@ from django.conf.urls.static import static
 from django.views.generic import RedirectView
 import os
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     re_path(r'',include(index_paths)),
+    re_path(r'i18n/', include('django.conf.urls.i18n')),
     re_path(r'poems/',include(poems_paths)),
     re_path(r'blogs/', include(blogs_paths)),
     re_path(r'search/', include(search_paths)),
     re_path(r'wordlist/', include(wordlist_paths)),
-]
+)
 
 USE_S3 = os.getenv('USE_S3') == 'TRUE'
 if not USE_S3:

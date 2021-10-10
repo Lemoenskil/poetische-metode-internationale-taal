@@ -36,16 +36,21 @@
 						<div class="header__chooseLanguage">
 										
 							<!-- dropdown -->
-							{% get_available_languages as LANGUAGES %}
 							{% get_current_language as LANGUAGE_CODE %}
-							<div class="dropdown" data-init="dropdown"><a class="dropdown__toggle" href="javascript:void(0)">{{ LANGUAGE_CODE|upper }}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+							{% get_available_languages as LANGUAGES %}
+							<div class="dropdown" data-init="dropdown">
+								<a class="dropdown__toggle" href="javascript:void(0)">{{ LANGUAGE_CODE|upper }}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 								<div class="dropdown__content" data-position="right">
 									<ul class="list-style-none">
-										{% for language in LANGUAGES %}
-										{% if not language.0|in_list:'eo,org' %}
-										<li><a href="#">{{ language.0|upper }}</a></li>
-										{% endif %}
-										{% endfor %}
+										<form id="set_language" action="{% url 'set_language' %}" method="post">
+											{% csrf_token %}
+											{% for language in LANGUAGES %}
+											{% if not language.0|in_list:'eo,org' %}
+											<li><a href="javascript:;" onclick="form=document.getElementById('set_language');form.language.value='{{language.0}}';form.submit();">{{ language.0|upper }}</a></li>
+											{% endif %}
+											{% endfor %}
+											<input type="hidden" name="language" value="{{LANGUAGE_CODE}}"/>
+										</form>
 									</ul>
 								</div>
 							</div><!-- End / dropdown -->
