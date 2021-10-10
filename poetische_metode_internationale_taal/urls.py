@@ -18,7 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls.conf import include, path, re_path
 from django.conf.urls.i18n import i18n_patterns
-from django.conf import settings           
+from django.conf import settings
 from home.urls import urlpatterns as index_paths
 from poems.urls import urlpatterns as poems_paths
 from blogs.urls import urlpatterns as blogs_paths

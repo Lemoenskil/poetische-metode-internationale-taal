@@ -4,202 +4,172 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Home</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<!-- Fonts-->
-		<link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome/font-awesome.min.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'fonts/themify-icons/themify-icons.css' %}">
-		<!-- Vendors-->
-		<link rel="stylesheet" type="text/css" href="{% static 'vendors/bootstrap4/bootstrap-grid.min.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'vendors/magnific-popup/magnific-popup.min.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'vendors/owl.carousel/owl.carousel.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'vendors/bootstrap4/bootstrap-grid.min.css' %}"> 
-		<link rel="stylesheet" type="text/css" href="{% static 'vendors/bootstrap4/bootstrap-grid.min.css' %}"> 
-		<!-- App & fonts-->
-		<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"><!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-	
-	<body>
-		<div class="page-wrap">
-			
-			<!-- header -->
-			<header class="header">
-				<div class="container">
-					<div class="header__logo"><a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""/></a></div>
-					<div class="header__toogleGroup">
-						<div class="header__chooseLanguage">
-										
-							<!-- dropdown -->
-							{% get_current_language as LANGUAGE_CODE %}
-							{% get_available_languages as LANGUAGES %}
-							<div class="dropdown" data-init="dropdown">
-								<a class="dropdown__toggle" href="javascript:void(0)">{{ LANGUAGE_CODE|upper }}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-								<div class="dropdown__content" data-position="right">
-									<ul class="list-style-none">
-										<form id="set_language" action="{% url 'set_language' %}" method="post">
-											{% csrf_token %}
-											{% for language in LANGUAGES %}
-											{% if not language.0|in_list:'eo,org' %}
-											<li><a href="javascript:;" onclick="form=document.getElementById('set_language');form.language.value='{{language.0}}';form.submit();">{{ language.0|upper }}</a></li>
-											{% endif %}
-											{% endfor %}
-											<input type="hidden" name="language" value="{{LANGUAGE_CODE}}"/>
-										</form>
-									</ul>
-								</div>
-							</div><!-- End / dropdown -->
-										
-						</div>
-						<div class="search-form">
-							<div class="search-form__toggle"><i class="ti-search"></i></div>
-							<div class="search-form__form">
-												
-								<!-- form-search -->
-								<div class="form-search">
-									<form method=POST action="{% url 'search' %}">
-										{% csrf_token %}
-										<input class="form-control" type="search" name="searched" placeholder="Hit enter to search or ESC to close"/>
-									</form>
-								</div><!-- End / form-search -->
-												
-							</div>
-						</div>
-					</div>
-					
-					<!-- consult-nav -->
-					<nav class="consult-nav">
-						
-						<!-- consult-menu -->
-						<ul class="consult-menu">
-							<li class="current-menu-item"><a href={% url 'index' %}>Home</a>
-							</li>
-							<li><a href={% url 'about' %}>{% trans 'About' %}</a>
-							</li>
-							<li><a href={% url 'learning_methode' %}>{% trans 'LearningMethod' %}</a>
-							</li>
-							<li><a href={% url 'wordlist' %}>{% trans 'WordList' %}</a>
-							</li>
-							<li><a href={% url 'poems' %}>{% trans 'Poems' %}</a>
-								<!-- <ul class="sub-menu">
-									<li><a href="blog-detail.html">Brows Poetry</a> 
-									</li>
-								</ul>  -->
-							</li>
-							<li><a href={% url 'get_blogs' %}>{% trans 'Blogs' %}</a>
-							</li>
-							<li><a href={% url 'contact' %}>{% trans 'Contact' %}</a>
-							</li>
-						</ul><!-- consult-menu -->
-						
-						<div class="navbar-toggle"><span></span><span></span><span></span></div>
-					</nav><!-- End / consult-nav -->
-					
-				</div>
-			</header><!-- End / header -->
-			
-			<!-- Content-->
-            {% block content %}
-            {% endblock %}	
-            
-            		<!-- footer -->
-			<footer class="footer">
-				<div class="footer__main">
-					<div class="row row-eq-height">
-						<div class="col-8 col-sm-7 col-md-9 col-lg-3 ">
-							<div class="footer__item"><a class="consult_logo" href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""/></a>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 offset-0 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-1 ">
-							<div class="footer__item">
-									
-									<!-- widget-text__widget -->
-									<section class="widget-text__widget widget">
-										<div class="widget-text__content">
-											<ul>
-												<li><a href="{% url 'index' %}">Home</a></li>
-												<li><a href="{% url 'about' %}">Over</a></li>
-											</ul>
-										</div>
-									</section><!-- End / widget-text__widget -->
-									
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 ">
-							<div class="footer__item">
-									
-									<!-- widget-text__widget -->
-									<section class="widget-text__widget widget">
-										<div class="widget-text__content">
-											<ul>
-												<!-- <li><a href="#">Link to humblart </a></li> -->
-												<li><a href="{% url 'contact' %}">Contact </a></li>
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Fonts-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/themify-icons/themify-icons.css' %}">
+    <!-- Vendors-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendors/bootstrap4/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendors/magnific-popup/magnific-popup.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendors/owl.carousel/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendors/bootstrap4/bootstrap-grid.min.css' %}">  
+    <link rel="stylesheet" type="text/css" href="{% static 'vendors/bootstrap4/bootstrap-grid.min.css' %}">  
+    <!-- App & fonts-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"><!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="page-wrap">
+      <!-- header -->
+      <header class="header">
+        <div class="container">
+          <div class="header__logo"><a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""/></a></div>
+          <div class="header__toogleGroup">
+            <div class="header__chooseLanguage">
+              <!-- dropdown -->
+              {% get_current_language as LANGUAGE_CODE %}
+              {% get_available_languages as LANGUAGES %}
+              <div class="dropdown" data-init="dropdown">
+                <a class="dropdown__toggle" href="javascript:void(0)">{{ LANGUAGE_CODE|upper }}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div class="dropdown__content" data-position="right">
+                  <ul class="list-style-none">
+                    <form id="set_language" action="{% url 'set_language' %}" method="post">
+                      {% csrf_token %}
+                      {% for language in LANGUAGES %}
+                      {% if not language.0|in_list:'eo,org' %}
+                      <li><a href="javascript:;" onclick="form=document.getElementById('set_language');form.language.value='{{language.0}}';form.submit();">{{ language.0|upper }}</a></li>
+                      {% endif %}
+                      {% endfor %}
+                      <input type="hidden" name="language" value="{{LANGUAGE_CODE}}"/>
+                    </form>
+                  </ul>
+                </div>
+              </div>
+              <!-- End / dropdown -->
+            </div>
+            <div class="search-form">
+              <div class="search-form__toggle"><i class="ti-search"></i></div>
+              <div class="search-form__form">
+                <!-- form-search -->
+                <div class="form-search">
+                  <form method=POST action="{% url 'search' %}">
+                    {% csrf_token %}
+                    <input class="form-control" type="search" name="searched" placeholder="Hit enter to search or ESC to close"/>
+                  </form>
+                </div><!-- End / form-search -->
+              </div>
+            </div>
+          </div>
+          <!-- consult-nav -->
+          <nav class="consult-nav">
+            <!-- consult-menu -->
+            <ul class="consult-menu">
+              <li class="current-menu-item"><a href={% url 'index' %}>Home</a>
+              </li>
+              <li><a href={% url 'about' %}>{% trans 'About' %}</a>
+              </li>
+              <li><a href={% url 'learning_methode' %}>{% trans 'LearningMethod' %}</a>
+              </li>
+              <li><a href={% url 'wordlist' %}>{% trans 'WordList' %}</a>
+              </li>
+              <li><a href={% url 'poems' %}>{% trans 'Poems' %}</a>
+              </li>
+              <li><a href={% url 'get_blogs' %}>{% trans 'Blogs' %}</a>
+              </li>
+              <li><a href={% url 'contact' %}>{% trans 'Contact' %}</a>
+              </li>
+            </ul>
+            <!-- consult-menu -->
+            <div class="navbar-toggle"><span></span><span></span><span></span></div>
+          </nav>
+          <!-- End / consult-nav -->
+        </div>
+      </header>
+      <!-- End / header -->
+      <!-- Content-->
+      {% block content %}
+      {% endblock %}
+      <!-- footer -->
+      <footer class="footer">
+        <div class="footer__main">
+          <div class="row row-eq-height">
+            <div class="col-8 col-sm-7 col-md-9 col-lg-3 ">
+              <div class="footer__item"><a class="consult_logo" href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""/></a>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 offset-0 offset-sm-0 offset-md-0 offset-lg-0 offset-xl-1 ">
+              <div class="footer__item">
+                  <!-- widget-text__widget -->
+                  <section class="widget-text__widget widget">
+                    <div class="widget-text__content">
+                      <ul>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">Over</a></li>
+                      </ul>
+                    </div>
+                  </section><!-- End / widget-text__widget -->
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 ">
+              <div class="footer__item">
+                  <!-- widget-text__widget -->
+                  <section class="widget-text__widget widget">
+                    <div class="widget-text__content">
+                      <ul>
+                        <!-- <li><a href="#">Link to humblart </a></li> -->
+                        <li><a href="{% url 'contact' %}">Contact </a></li>
 
-											</ul>
-										</div>
-									</section><!-- End / widget-text__widget -->
-									
-							</div>
-						</div>
-						<div class="col-md-4 col-lg-2 col-xl-2 ">
-							<div class="footer__item">
-									<!-- widget-text__widget -->
-									<section class="widget-text__widget widget">
-                                        <div class="widget-text__content" id="sosial">
-                                            <ul>
-												<li><a href="#"><i class="fa fa-facebook"></i> </a></li>
-												<li><a href="#"><i class="fa fa-twitter"></i> </a></li>
-                                                <li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
-                                                <li><a href="#"><i class="fa fa-youtube"></i> </a></li>
-											</ul>
-                                        </div>
-                                    </section>
-                                    <!-- End / widget-text__widget -->
-									<!-- form-sub
-									<div class="form-sub">
-										<h4 class="form-sub__title">Our Newsletter</h4>
-										<form class="form-sub__form">
-											<div class="form-item">
-												<input class="form-control" type="email" placeholder="Enter Your Email Address..."/>
-											</div>
-											<div class="form-submit">
-												<button class="form-button" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-											</div>
-										</form>
-									</div> End / form-sub -->
-
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-4 col-lg-2 col-xl-2  consult_backToTop">
-							<div class="footer__item"><a href="#" id="back-to-top"> <i class="fa fa-angle-up" aria-hidden="true"> </i><span>Back To Top</span></a></div>
-						</div>
-					</div>
-				</div>
-				<div class="footer__copyright">2017 &copy; Copyright Awe7. All rights Reserved.</div>
-			</footer><!-- End / footer -->
-			
-		</div>
-		<!-- Vendors-->
-		<script type="text/javascript" src="{% static 'vendors/jquery/jquery.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendors/imagesloaded/imagesloaded.pkgd.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendors/isotope-layout/isotope.pkgd.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendors/jquery.countdown/jquery.countdown.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendors/jquery.countTo/jquery.countTo.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendors/jquery.countUp/jquery.countup.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendors/jquery.matchHeight/jquery.matchHeight.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendors/jquery.mb.ytplayer/jquery.mb.YTPlayer.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendors/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendors/masonry-layout/masonry.pkgd.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendors/owl.carousel/owl.carousel.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendors/jquery.waypoints/jquery.waypoints.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendors/menu/menu.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vendors/smoothscroll/SmoothScroll.min.js' %}"></script>
-		<!-- App-->
-		<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-	</body>
+                      </ul>
+                    </div>
+                  </section><!-- End / widget-text__widget -->
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-2 col-xl-2 ">
+              <div class="footer__item">
+                <!-- widget-text__widget -->
+                <section class="widget-text__widget widget">
+                  <div class="widget-text__content" id="sosial">
+                    <ul>
+                      <li><a href="#"><i class="fa fa-facebook"></i> </a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i> </a></li>
+                                              <li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
+                                              <li><a href="#"><i class="fa fa-youtube"></i> </a></li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2  consult_backToTop">
+              <div class="footer__item"><a href="#" id="back-to-top"> <i class="fa fa-angle-up" aria-hidden="true"> </i><span>Back To Top</span></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__copyright">2017 &copy; Copyright Awe7. All rights Reserved.</div>
+      </footer>
+      <!-- End / footer -->
+    </div>
+    <!-- Vendors-->
+    <script type="text/javascript" src="{% static 'vendors/jquery/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendors/imagesloaded/imagesloaded.pkgd.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendors/isotope-layout/isotope.pkgd.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendors/jquery.countdown/jquery.countdown.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendors/jquery.countTo/jquery.countTo.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendors/jquery.countUp/jquery.countup.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendors/jquery.matchHeight/jquery.matchHeight.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendors/jquery.mb.ytplayer/jquery.mb.YTPlayer.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendors/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendors/masonry-layout/masonry.pkgd.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendors/owl.carousel/owl.carousel.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendors/jquery.waypoints/jquery.waypoints.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendors/menu/menu.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendors/smoothscroll/SmoothScroll.min.js' %}"></script>
+    <!-- App-->
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+  </body>
 </html>
