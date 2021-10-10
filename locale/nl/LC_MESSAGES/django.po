@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-03 19:33+0000\n"
+"POT-Creation-Date: 2021-10-10 12:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,14 @@ msgstr ""
 #: home/templates/index.html:117
 msgid "LearnNewLanguage"
 msgstr "Leer een nieuwe taal door poëzie"
+
+#: home/templates/index.html:131
+msgid "NewWordsAndSentences"
+msgstr "Nieuwe woorden &amp; zinnen"
+
+#: home/templates/index.html:132
+msgid "NewWordsAndSentencesSummary"
+msgstr "De gedichten bieden een klein verhaaltje waarvan je woorden en zinnen leert die er voor jou toe doen."
 
 #: poems/models.py:11 poems/models.py:19 poems/models.py:31
 msgid "name"
@@ -38,35 +46,35 @@ msgstr "Titel"
 msgid "line"
 msgstr "Lijn"
 
-#: poetische_metode_internationale_taal/settings.py:153
+#: poetische_metode_internationale_taal/settings.py:154
 msgid "Esperanto"
 msgstr "Esperanto"
 
-#: poetische_metode_internationale_taal/settings.py:154
+#: poetische_metode_internationale_taal/settings.py:155
 msgid "Nederlands"
 msgstr "Nederlands"
 
-#: poetische_metode_internationale_taal/settings.py:155
+#: poetische_metode_internationale_taal/settings.py:156
 msgid "Original"
 msgstr "Origineel"
 
-#: poetische_metode_internationale_taal/settings.py:156
+#: poetische_metode_internationale_taal/settings.py:157
 msgid "Engels"
 msgstr "Engels"
 
-#: templates/base.html:71
+#: templates/base.html:75
 msgid "About"
 msgstr "Over"
 
-#: templates/base.html:73
+#: templates/base.html:77
 msgid "LearningMethod"
 msgstr "Leer Methode"
 
-#: templates/base.html:75
+#: templates/base.html:79
 msgid "WordList"
 msgstr "Woordenlijst"
 
-#: templates/base.html:77
+#: templates/base.html:81
 msgid "Poems"
 msgstr "Poëzie"
 
