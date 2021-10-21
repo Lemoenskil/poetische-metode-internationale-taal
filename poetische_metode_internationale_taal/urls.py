@@ -24,6 +24,7 @@ from poems.urls import urlpatterns as poems_paths
 from blogs.urls import urlpatterns as blogs_paths
 from search.urls import urlpatterns as search_paths
 from wordlist.urls import urlpatterns as wordlist_paths
+from audio.urls import urlpatterns as audio_paths
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
 import os
@@ -34,6 +35,7 @@ urlpatterns = i18n_patterns(
     re_path(r'i18n/', include('django.conf.urls.i18n')),
     re_path(r'poems/',include(poems_paths)),
     re_path(r'blogs/', include(blogs_paths)),
+    re_path(r'audio/', include(audio_paths)),
     re_path(r'search/', include(search_paths)),
     re_path(r'wordlist/', include(wordlist_paths)),
 )

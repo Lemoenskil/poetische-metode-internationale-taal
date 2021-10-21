@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'home',
     'poems',
     'blogs',
+    'audio',
     'search',
     'wordlist',
 ]
