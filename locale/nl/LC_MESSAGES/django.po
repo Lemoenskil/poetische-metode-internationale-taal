@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-10 18:29+0000\n"
+"POT-Creation-Date: 2021-10-23 17:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blogs/models.py:12 poems/models.py:63
+msgid "title"
+msgstr "Titel"
+
+#: blogs/models.py:15
+msgid "content"
+msgstr ""
 
 #: home/templates/about.html:19 templates/base.html:75 templates/base.html:113
 msgid "About"
@@ -50,66 +58,70 @@ msgstr ""
 "voorzien van een eenvoudig overzicht van de grammatica  en zo ontstond de "
 "‘poëtische taalmethode’."
 
-#: home/templates/about.html:42 home/templates/index.html:188
+#: home/templates/about.html:42 home/templates/index.html:190
 #: home/templates/learning_methode.html:98
 msgid "Meestrecenteblogs"
 msgstr "Meest recente blogs"
 
-#: home/templates/about.html:59 home/templates/index.html:55
-#: home/templates/index.html:94 home/templates/index.html:205
-#: home/templates/learning_methode.html:115 poems/templates/poems.html:43
+#: home/templates/about.html:59 home/templates/index.html:57
+#: home/templates/index.html:96 home/templates/index.html:207
+#: home/templates/learning_methode.html:115 poems/templates/poems.html:44
 msgid "Readmore"
 msgstr "Lees verder ..."
 
-#: home/templates/index.html:117 home/templates/learning_methode.html:19
+#: home/templates/index.html:22
+msgid "frontpagetext"
+msgstr "“De werkelijkheid is geen duurzaam iets, het heeft onze bescherming nodig. Gebouwen storten in, hele werelden verdwijnen. Taal kan van tijd tot tijd een gastvrij gat graven, waarin niets overbodig is, kan een omheinde omheining opzetten waarbinnen dingen en mensen zij aan zij kunnen ademen, van het licht kunnen genieten en overleven.”  Antonella Amedda"
+
+#: home/templates/index.html:119 home/templates/learning_methode.html:19
 msgid "LearnNewLanguage"
 msgstr "Leer een nieuwe taal door poëzie"
 
-#: home/templates/index.html:118
+#: home/templates/index.html:120
 msgid "LearnNewLanguageSum"
 msgstr ""
 "Een nieuwe taal vraagt om een nieuwe methode.  In 2021 verscheen Een  "
 "poëtische taalmethode bij Humble Art"
 
-#: home/templates/index.html:131
+#: home/templates/index.html:133
 msgid "NewWordsAndSentences"
 msgstr "Nieuwe woorden &amp; zinnen"
 
-#: home/templates/index.html:132
+#: home/templates/index.html:134
 msgid "NewWordsAndSentencesSummary"
 msgstr ""
 "De gedichten bieden een klein verhaaltje waarvan je woorden en zinnen leert "
 "die er voor jou toe doen."
 
-#: home/templates/index.html:143
+#: home/templates/index.html:145
 msgid "Easytorepeat"
 msgstr "Makkelijk te herhalen"
 
-#: home/templates/index.html:144
+#: home/templates/index.html:146
 msgid "Easytorepeatsum"
 msgstr ""
 "De dichter weet in enkele zinnen een onderwerp neer te zetten dat "
 "interessant genoeg is om te blijven herhalen."
 
-#: home/templates/index.html:155
+#: home/templates/index.html:157
 msgid "RapidProgress"
 msgstr "Snelle Vooruitgang"
 
-#: home/templates/index.html:156
+#: home/templates/index.html:158
 msgid "RapidProgressSum"
 msgstr ""
 "Deze methode is er leuk en dat je het je eigen maakt, zul jie het resultaat "
 "heel znel merken."
 
-#: home/templates/index.html:167
+#: home/templates/index.html:169
 msgid "Personalized"
 msgstr "Gepersonaliseerd"
 
-#: home/templates/index.html:167
+#: home/templates/index.html:169
 msgid "Uniqe"
 msgstr "uniek"
 
-#: home/templates/index.html:168
+#: home/templates/index.html:170
 msgid "PersonalizedSum"
 msgstr ""
 "Uit onderzoek blijkt dat eigen vondsten sneller en beter in het geheugen "
@@ -182,43 +194,39 @@ msgstr "Naam"
 msgid "abstract"
 msgstr "Abstract"
 
-#: poems/models.py:63
-msgid "title"
-msgstr "Titel"
-
 #: poems/models.py:74
 msgid "line"
 msgstr "Lijn"
 
-#: poems/templates/poems.html:59
+#: poems/templates/poems.html:60 poems/templates/single-poem.html:79
 msgid "Poet"
 msgstr "Dichter"
 
-#: poems/templates/poems.html:79
+#: poems/templates/poems.html:80 poems/templates/single-poem.html:99
 msgid "Genres"
 msgstr "Genres"
 
-#: poems/templates/poems.html:99
+#: poems/templates/poems.html:100 poems/templates/single-poem.html:119
 msgid "Country"
 msgstr "Landen"
 
-#: poems/templates/poems.html:123
+#: poems/templates/poems.html:124 poems/templates/single-poem.html:143
 msgid "RecentPoems"
 msgstr "Meest recente gedichten"
 
-#: poetische_metode_internationale_taal/settings.py:154
+#: poetische_metode_internationale_taal/settings.py:155
 msgid "Esperanto"
 msgstr "Esperanto"
 
-#: poetische_metode_internationale_taal/settings.py:155
+#: poetische_metode_internationale_taal/settings.py:156
 msgid "Nederlands"
 msgstr "Nederlands"
 
-#: poetische_metode_internationale_taal/settings.py:156
+#: poetische_metode_internationale_taal/settings.py:157
 msgid "Original"
 msgstr "Origineel"
 
-#: poetische_metode_internationale_taal/settings.py:157
+#: poetische_metode_internationale_taal/settings.py:158
 msgid "Engels"
 msgstr "Engels"
 

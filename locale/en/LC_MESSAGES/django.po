@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-10 18:29+0000\n"
+"POT-Creation-Date: 2021-10-23 17:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blogs/models.py:12 poems/models.py:63
+msgid "title"
+msgstr "Title"
+
+#: blogs/models.py:15
+msgid "content"
+msgstr ""
 
 #: home/templates/about.html:19 templates/base.html:75 templates/base.html:113
 msgid "About"
@@ -48,66 +56,70 @@ msgstr ""
 "together, providing them with a simple overview of the grammar, and thus the "
 "'poetic language method' was born."
 
-#: home/templates/about.html:42 home/templates/index.html:188
+#: home/templates/about.html:42 home/templates/index.html:190
 #: home/templates/learning_methode.html:98
 msgid "Meestrecenteblogs"
 msgstr "Most recent blogs"
 
-#: home/templates/about.html:59 home/templates/index.html:55
-#: home/templates/index.html:94 home/templates/index.html:205
-#: home/templates/learning_methode.html:115 poems/templates/poems.html:43
+#: home/templates/about.html:59 home/templates/index.html:57
+#: home/templates/index.html:96 home/templates/index.html:207
+#: home/templates/learning_methode.html:115 poems/templates/poems.html:44
 msgid "Readmore"
 msgstr "Read more ..."
 
-#: home/templates/index.html:117 home/templates/learning_methode.html:19
+#: home/templates/index.html:22
+msgid "frontpagetext"
+msgstr "“Reality is not a permanent thing, it needs our protection. Buildings collapse, whole worlds disappear. Language can dig a hospitable hole from time to time, in which nothing is superfluous, a fenced fence in which things and people can breathe side by side, enjoy the light and survive.” Antonella Amedda"
+
+#: home/templates/index.html:119 home/templates/learning_methode.html:19
 msgid "LearnNewLanguage"
 msgstr "Learn a new language through poetry"
 
-#: home/templates/index.html:118
+#: home/templates/index.html:120
 msgid "LearnNewLanguageSum"
 msgstr ""
 "A new language requires a new method. In 2021 A Poetic Language Method "
 "appeared at Humble Art"
 
-#: home/templates/index.html:131
+#: home/templates/index.html:133
 msgid "NewWordsAndSentences"
 msgstr "New words &amp; sentences"
 
-#: home/templates/index.html:132
+#: home/templates/index.html:134
 msgid "NewWordsAndSentencesSummary"
 msgstr ""
 "The poems offer a small story from which you learn words and phrases that "
 "matter to you."
 
-#: home/templates/index.html:143
+#: home/templates/index.html:145
 msgid "Easytorepeat"
 msgstr "Easy to repeat"
 
-#: home/templates/index.html:144
+#: home/templates/index.html:146
 msgid "Easytorepeatsum"
 msgstr ""
 "The poet manages to present a subject in a few sentences that is interesting "
 "enough to keep repeating."
 
-#: home/templates/index.html:155
+#: home/templates/index.html:157
 msgid "RapidProgress"
 msgstr "Rapid Progress"
 
-#: home/templates/index.html:156
+#: home/templates/index.html:158
 msgid "RapidProgressSum"
 msgstr ""
 "This method is fun and if you make it your own, you will notice the result "
 "very soon."
 
-#: home/templates/index.html:167
+#: home/templates/index.html:169
 msgid "Personalized"
 msgstr "Personalized"
 
-#: home/templates/index.html:167
+#: home/templates/index.html:169
 msgid "Uniqe"
 msgstr "unique"
 
-#: home/templates/index.html:168
+#: home/templates/index.html:170
 msgid "PersonalizedSum"
 msgstr ""
 "Research shows that one's own finds are recorded faster and better in the "
@@ -178,43 +190,39 @@ msgstr "Name"
 msgid "abstract"
 msgstr "Abstract"
 
-#: poems/models.py:63
-msgid "title"
-msgstr "Title"
-
 #: poems/models.py:74
 msgid "line"
 msgstr "Line"
 
-#: poems/templates/poems.html:59
+#: poems/templates/poems.html:60 poems/templates/single-poem.html:79
 msgid "Poet"
 msgstr "Poet"
 
-#: poems/templates/poems.html:79
+#: poems/templates/poems.html:80 poems/templates/single-poem.html:99
 msgid "Genres"
 msgstr "Genres"
 
-#: poems/templates/poems.html:99
+#: poems/templates/poems.html:100 poems/templates/single-poem.html:119
 msgid "Country"
 msgstr "Country"
 
-#: poems/templates/poems.html:123
+#: poems/templates/poems.html:124 poems/templates/single-poem.html:143
 msgid "RecentPoems"
 msgstr "Most recent poems"
 
-#: poetische_metode_internationale_taal/settings.py:154
+#: poetische_metode_internationale_taal/settings.py:155
 msgid "Esperanto"
 msgstr "Esperanto"
 
-#: poetische_metode_internationale_taal/settings.py:155
+#: poetische_metode_internationale_taal/settings.py:156
 msgid "Nederlands"
 msgstr "Netherlands"
 
-#: poetische_metode_internationale_taal/settings.py:156
+#: poetische_metode_internationale_taal/settings.py:157
 msgid "Original"
 msgstr "Original"
 
-#: poetische_metode_internationale_taal/settings.py:157
+#: poetische_metode_internationale_taal/settings.py:158
 msgid "Engels"
 msgstr "English"
 
