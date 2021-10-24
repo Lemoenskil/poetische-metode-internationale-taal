@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-23 17:31+0000\n"
+"POT-Creation-Date: 2021-10-24 15:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,70 +58,75 @@ msgstr ""
 "voorzien van een eenvoudig overzicht van de grammatica  en zo ontstond de "
 "‘poëtische taalmethode’."
 
-#: home/templates/about.html:42 home/templates/index.html:190
+#: home/templates/about.html:42 home/templates/index.html:187
 #: home/templates/learning_methode.html:98
 msgid "Meestrecenteblogs"
 msgstr "Meest recente blogs"
 
-#: home/templates/about.html:59 home/templates/index.html:57
-#: home/templates/index.html:96 home/templates/index.html:207
+#: home/templates/about.html:59 home/templates/index.html:54
+#: home/templates/index.html:93 home/templates/index.html:204
 #: home/templates/learning_methode.html:115 poems/templates/poems.html:44
 msgid "Readmore"
 msgstr "Lees verder ..."
 
 #: home/templates/index.html:22
 msgid "frontpagetext"
-msgstr "“De werkelijkheid is geen duurzaam iets, het heeft onze bescherming nodig. Gebouwen storten in, hele werelden verdwijnen. Taal kan van tijd tot tijd een gastvrij gat graven, waarin niets overbodig is, kan een omheinde omheining opzetten waarbinnen dingen en mensen zij aan zij kunnen ademen, van het licht kunnen genieten en overleven.”  Antonella Amedda"
+msgstr ""
+"“De werkelijkheid is geen duurzaam iets, het heeft onze bescherming nodig. "
+"Gebouwen storten in, hele werelden verdwijnen. Taal kan van tijd tot tijd "
+"een gastvrij gat graven, waarin niets overbodig is, kan een omheinde "
+"omheining opzetten waarbinnen dingen en mensen zij aan zij kunnen ademen, "
+"van het licht kunnen genieten en overleven.”  Antonella Amedda"
 
-#: home/templates/index.html:119 home/templates/learning_methode.html:19
+#: home/templates/index.html:116 home/templates/learning_methode.html:19
 msgid "LearnNewLanguage"
 msgstr "Leer een nieuwe taal door poëzie"
 
-#: home/templates/index.html:120
+#: home/templates/index.html:117
 msgid "LearnNewLanguageSum"
 msgstr ""
 "Een nieuwe taal vraagt om een nieuwe methode.  In 2021 verscheen Een  "
 "poëtische taalmethode bij Humble Art"
 
-#: home/templates/index.html:133
+#: home/templates/index.html:130
 msgid "NewWordsAndSentences"
 msgstr "Nieuwe woorden &amp; zinnen"
 
-#: home/templates/index.html:134
+#: home/templates/index.html:131
 msgid "NewWordsAndSentencesSummary"
 msgstr ""
 "De gedichten bieden een klein verhaaltje waarvan je woorden en zinnen leert "
 "die er voor jou toe doen."
 
-#: home/templates/index.html:145
+#: home/templates/index.html:142
 msgid "Easytorepeat"
 msgstr "Makkelijk te herhalen"
 
-#: home/templates/index.html:146
+#: home/templates/index.html:143
 msgid "Easytorepeatsum"
 msgstr ""
 "De dichter weet in enkele zinnen een onderwerp neer te zetten dat "
 "interessant genoeg is om te blijven herhalen."
 
-#: home/templates/index.html:157
+#: home/templates/index.html:154
 msgid "RapidProgress"
 msgstr "Snelle Vooruitgang"
 
-#: home/templates/index.html:158
+#: home/templates/index.html:155
 msgid "RapidProgressSum"
 msgstr ""
 "Deze methode is er leuk en dat je het je eigen maakt, zul jie het resultaat "
 "heel znel merken."
 
-#: home/templates/index.html:169
+#: home/templates/index.html:166
 msgid "Personalized"
 msgstr "Gepersonaliseerd"
 
-#: home/templates/index.html:169
+#: home/templates/index.html:166
 msgid "Uniqe"
 msgstr "uniek"
 
-#: home/templates/index.html:170
+#: home/templates/index.html:167
 msgid "PersonalizedSum"
 msgstr ""
 "Uit onderzoek blijkt dat eigen vondsten sneller en beter in het geheugen "
@@ -253,3 +258,15 @@ msgstr "Eerste Letter"
 #: wordlist/models.py:18 wordlist/models.py:24 wordlist/models.py:30
 msgid "word"
 msgstr "Woord"
+
+#: wordlist/templates/wordlist.html:29
+msgid "wordlistNouns"
+msgstr "zelfstanding naamwoorden"
+
+#: wordlist/templates/wordlist.html:30
+msgid "wordlistOtherWords"
+msgstr "verige woorden"
+
+#: wordlist/templates/wordlist.html:31
+msgid "wordlistVerbs"
+msgstr "werkwoorden"

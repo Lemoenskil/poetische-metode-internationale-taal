@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-23 17:31+0000\n"
+"POT-Creation-Date: 2021-10-24 15:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr "Title"
 
 #: blogs/models.py:15
 msgid "content"
-msgstr ""
+msgstr "content"
 
 #: home/templates/about.html:19 templates/base.html:75 templates/base.html:113
 msgid "About"
@@ -56,70 +56,75 @@ msgstr ""
 "together, providing them with a simple overview of the grammar, and thus the "
 "'poetic language method' was born."
 
-#: home/templates/about.html:42 home/templates/index.html:190
+#: home/templates/about.html:42 home/templates/index.html:187
 #: home/templates/learning_methode.html:98
 msgid "Meestrecenteblogs"
 msgstr "Most recent blogs"
 
-#: home/templates/about.html:59 home/templates/index.html:57
-#: home/templates/index.html:96 home/templates/index.html:207
+#: home/templates/about.html:59 home/templates/index.html:54
+#: home/templates/index.html:93 home/templates/index.html:204
 #: home/templates/learning_methode.html:115 poems/templates/poems.html:44
 msgid "Readmore"
 msgstr "Read more ..."
 
 #: home/templates/index.html:22
 msgid "frontpagetext"
-msgstr "“Reality is not a permanent thing, it needs our protection. Buildings collapse, whole worlds disappear. Language can dig a hospitable hole from time to time, in which nothing is superfluous, a fenced fence in which things and people can breathe side by side, enjoy the light and survive.” Antonella Amedda"
+msgstr ""
+"“Reality is not a permanent thing, it needs our protection. Buildings "
+"collapse, whole worlds disappear. Language can dig a hospitable hole from "
+"time to time, in which nothing is superfluous, a fenced fence in which "
+"things and people can breathe side by side, enjoy the light and survive.” "
+"Antonella Amedda"
 
-#: home/templates/index.html:119 home/templates/learning_methode.html:19
+#: home/templates/index.html:116 home/templates/learning_methode.html:19
 msgid "LearnNewLanguage"
 msgstr "Learn a new language through poetry"
 
-#: home/templates/index.html:120
+#: home/templates/index.html:117
 msgid "LearnNewLanguageSum"
 msgstr ""
 "A new language requires a new method. In 2021 A Poetic Language Method "
 "appeared at Humble Art"
 
-#: home/templates/index.html:133
+#: home/templates/index.html:130
 msgid "NewWordsAndSentences"
 msgstr "New words &amp; sentences"
 
-#: home/templates/index.html:134
+#: home/templates/index.html:131
 msgid "NewWordsAndSentencesSummary"
 msgstr ""
 "The poems offer a small story from which you learn words and phrases that "
 "matter to you."
 
-#: home/templates/index.html:145
+#: home/templates/index.html:142
 msgid "Easytorepeat"
 msgstr "Easy to repeat"
 
-#: home/templates/index.html:146
+#: home/templates/index.html:143
 msgid "Easytorepeatsum"
 msgstr ""
 "The poet manages to present a subject in a few sentences that is interesting "
 "enough to keep repeating."
 
-#: home/templates/index.html:157
+#: home/templates/index.html:154
 msgid "RapidProgress"
 msgstr "Rapid Progress"
 
-#: home/templates/index.html:158
+#: home/templates/index.html:155
 msgid "RapidProgressSum"
 msgstr ""
 "This method is fun and if you make it your own, you will notice the result "
 "very soon."
 
-#: home/templates/index.html:169
+#: home/templates/index.html:166
 msgid "Personalized"
 msgstr "Personalized"
 
-#: home/templates/index.html:169
+#: home/templates/index.html:166
 msgid "Uniqe"
 msgstr "unique"
 
-#: home/templates/index.html:170
+#: home/templates/index.html:167
 msgid "PersonalizedSum"
 msgstr ""
 "Research shows that one's own finds are recorded faster and better in the "
@@ -249,3 +254,15 @@ msgstr "First Letter"
 #: wordlist/models.py:18 wordlist/models.py:24 wordlist/models.py:30
 msgid "word"
 msgstr "Word"
+
+#: wordlist/templates/wordlist.html:29
+msgid "wordlistNouns"
+msgstr "nouns"
+
+#: wordlist/templates/wordlist.html:30
+msgid "wordlistOtherWords"
+msgstr "other words"
+
+#: wordlist/templates/wordlist.html:31
+msgid "wordlistVerbs"
+msgstr "verb"
