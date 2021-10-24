@@ -4733,9 +4733,13 @@ mark, .mark {
     padding-left: 7px;
     padding-right: 7px;
     border-right: 1px solid #777;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
 }
 
 .wordlist-right-cell {
     padding-left: 7px;
     padding-right: 7px;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
 }
