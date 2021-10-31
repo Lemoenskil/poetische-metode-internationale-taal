@@ -10,7 +10,6 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('filer', '0013_auto_20210626_0726'),
     ]
 
     operations = [
