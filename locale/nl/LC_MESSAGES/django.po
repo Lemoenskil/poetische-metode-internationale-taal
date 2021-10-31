@@ -20,7 +20,7 @@ msgstr ""
 
 #: audio/templates/audio.html:23
 msgid "Poem_name_audio"
-msgstr "Gedicht met audio"
+msgstr "Geluidsopnamen van gedichten"
 
 #: blogs/models.py:12 poems/models.py:63
 msgid "title"
