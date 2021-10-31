@@ -1,0 +1,6 @@
+# Debian dependencies required for audio file management
+libsox-fmt-mp3
+libsox-fmt-all
+mpg321
+dir2ogg
+ffmpeg

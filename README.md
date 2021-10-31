@@ -2,6 +2,49 @@
 
 The project can be viewed [at the Heroku hosted site](https://poetische-metode-international.herokuapp.com/).
 
+## Heroku set-up
+
+To support audio files, additional non-python dependencies need to be installed. To be able to do so, you need to install [heroku-buildpack-apt](https://github.com/heroku/heroku-buildpack-apt) once when setting up a new Heroku deployment:
+
+1. On the command-line, set your heroku app variable. E.g.:
+   ```
+   export HEROKU_APP=poetische-metode-international
+   ```
+1. Run the heroku `apps` command to start a session and log in:
+   ```
+   heroku apps
+   ```
+   The output will be one of the following: following:see the following output, unless you are already logged in, in which case you can skip the rest of this step:
+   * If you are already logged in, just continue with the remaining steps:
+     ```
+     === Collaborated Apps
+     ...
+     ```
+   * If you are not logged in, press any key as instructed, and log in via the browser window that opens:
+     ```
+     heroku: Press any key to open up the browser to login or q to exit: 
+     Opening browser to https://cli-auth.heroku.com/auth/cli/browser/...
+     ```
+     On successful login, you should get the following output:
+     ```
+     Logging in... done
+     ```
+1. Install the [heroku-buildpack-apt](https://github.com/heroku/heroku-buildpack-apt):
+   ```
+   heroku buildpacks:add --index 1 heroku-community/apt
+   ```
+   If successful, you should get the following output:
+   ```
+   Buildpack added. Next release on poetische-metode-international will use:
+     1. heroku-community/apt
+     2. heroku/python
+   ```
+
+You will also have to install these dependencies on your Ubuntu development environment if you want to test locally:
+```
+sudo apt install libsox-fmt-mp3 libsox-fmt-all mpg321 dir2ogg ffmpeg
+```
+
 ## Instructions for internationalization
 
 Follow these steps for each translation you want to apply to the HTML:
