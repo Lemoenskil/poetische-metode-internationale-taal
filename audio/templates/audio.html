@@ -24,15 +24,20 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <!-- Audio recordings -->
+                      {% for recording in voice_recordings %}
                       <tr>
-                        <!-- Poem_name -->
-                        <td style="text-align: right;" class="">test
-
+                        <td style="text-align: center; width: 33%;">
+                          {{recording.title}}
                         </td>
-                        <td style="text-align: center;" class="">test
+                        <td style="text-align: center; width: 33%;">
+                          <audio controls>
+                            <source src="{{recording.audio_file.url}}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                          </audio>
                         </td>
-
                       </tr>
+                      {% endfor %}
                     </tbody>
                   </table>
                 </div>
