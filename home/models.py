@@ -27,3 +27,6 @@ class SiteSettings(SingletonModel):
     introduction = TranslatedField(
         models.TextField(_("introduction"), default='', blank=True)
     )
+    about = TranslatedField(
+        models.TextField(_("about"), default='', blank=True)
+    )
