@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-07 12:14+0000\n"
+"POT-Creation-Date: 2021-11-07 12:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,6 +43,12 @@ msgstr ""
 #| msgid "MyStory"
 msgid "my_story"
 msgstr "Mijn verhaal"
+
+#: home/models.py:34
+#, fuzzy
+#| msgid "LearnNewLanguage"
+msgid "learn_a_new_language"
+msgstr "Leer een nieuwe taal door poëzie"
 
 #: home/templates/about.html:19 templates/base.html:75 templates/base.html:117
 msgid "About"
@@ -121,28 +127,6 @@ msgstr ""
 #: home/templates/learning_methode.html:38 templates/base.html:77
 msgid "LearningMethod"
 msgstr "Leer Methode"
-
-#: home/templates/learning_methode.html:20
-msgid "LearnNewLanguageIntro"
-msgstr ""
-"Het Esperanto is  een taal die tussen alle andere talen kan staan. Het is "
-"een geconstrueerde internationale taal die ook wel basistaal of starterstaal "
-"wordt genoemd.  Als men deze taal als eerste vreemde taal leert, het  leren "
-"van andere talen aanzienlijk vergemakkelijkt. Een nieuwe taal vraagt om een "
-"nieuwe methode.  In 2021 verscheen Een  poëtische taalmethode bij Humble "
-"Art,  waarin 27 gedichten vanuit  23  verschillende Europese talen staan "
-"opgenomen, vertaald en voorzien van informatie over de dichter en een "
-"handleiding hoe deze methode te gebruiken. Kern daarvan is het uit het hoofd "
-"leren van  een gedicht per week,  waarbij je  het nieuwe vocabulaire "
-"spelenderwijs leert. De poëtische methode leert  ook hoe je op eigen wijze "
-"woordenlijsten maakt en je eigen associaties  gebruikt bij het "
-"taalleerproces. Een summier overzicht van de taalregels met voorbeelden uit "
-"de gedichten maakte het tot een beknopte introductie  in de internationale "
-"taal.  Op deze website vind je wekelijks een nieuw gedicht met steeds de "
-"letterlijke Esperanto vertaling ernaast. Kies vooral een gedicht dat je "
-"aanspreekt en houdt je gedurende die week je met dat ene gedicht bezig. Over "
-"het leren van de taal lees verder  (Blog)  Minimale methode en Persoonlijke  "
-"methode."
 
 #: home/templates/learning_methode.html:39
 msgid "Howdoesitwork"
@@ -251,3 +235,4 @@ msgstr "verige woorden"
 #: wordlist/templates/wordlist.html:31
 msgid "wordlistVerbs"
 msgstr "werkwoorden"
+

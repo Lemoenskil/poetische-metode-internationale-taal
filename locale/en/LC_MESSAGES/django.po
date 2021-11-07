@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-07 12:14+0000\n"
+"POT-Creation-Date: 2021-11-07 12:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,6 +43,12 @@ msgstr ""
 #| msgid "MyStory"
 msgid "my_story"
 msgstr "My story"
+
+#: home/models.py:34
+#, fuzzy
+#| msgid "LearnNewLanguage"
+msgid "learn_a_new_language"
+msgstr "Learn a new language through poetry"
 
 #: home/templates/about.html:19 templates/base.html:75 templates/base.html:117
 msgid "About"
@@ -121,26 +127,6 @@ msgstr ""
 #: home/templates/learning_methode.html:38 templates/base.html:77
 msgid "LearningMethod"
 msgstr "Learning Method"
-
-#: home/templates/learning_methode.html:20
-msgid "LearnNewLanguageIntro"
-msgstr ""
-"Esperanto is a language that can stand among all other languages. It is a "
-"constructed international language which is also known as base language or "
-"starter language. If one learns this language as a first foreign language, "
-"learning other languages ​​is greatly facilitated.  A new language requires a "
-"new method. In 2021 A Poetic Language Method was published by Humble Art, in "
-"which 27 poems from 23 different European languages ​​are included, translated "
-"and provided with information about the poet and a manual on how to use this "
-"method.  The core of this is memorizing one poem per week, while learning "
-"the new vocabulary in a playful way. The poetic method also teaches you how "
-"to create word lists in your own way and use your own associations in the "
-"language learning process. A brief overview of the language rules with "
-"examples from the poems made it a brief introduction to the international "
-"language.  On this website you will find a new poem every week with the "
-"literal Esperanto translation next to it. Choose a poem that appeals to you "
-"and focus on that one poem during that week.  About learning the language "
-"read more (Blog) Minimal method and Personal method."
 
 #: home/templates/learning_methode.html:39
 msgid "Howdoesitwork"
@@ -249,3 +235,4 @@ msgstr "other words"
 #: wordlist/templates/wordlist.html:31
 msgid "wordlistVerbs"
 msgstr "verb"
+
