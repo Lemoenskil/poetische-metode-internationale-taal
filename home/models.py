@@ -30,3 +30,6 @@ class SiteSettings(SingletonModel):
     my_story = TranslatedField(
         models.TextField(_("my_story"), default='', blank=True)
     )
+    learn_a_new_language = TranslatedField(
+        models.TextField(_("learn_a_new_language"), default='', blank=True)
+    )
