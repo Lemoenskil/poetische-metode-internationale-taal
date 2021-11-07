@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-07 11:10+0000\n"
+"POT-Creation-Date: 2021-11-07 12:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,12 @@ msgstr "content"
 msgid "introduction"
 msgstr ""
 
+#: home/models.py:31
+#, fuzzy
+#| msgid "MyStory"
+msgid "my_story"
+msgstr "My story"
+
 #: home/templates/about.html:19 templates/base.html:75 templates/base.html:117
 msgid "About"
 msgstr "About"
@@ -45,28 +51,6 @@ msgstr "About"
 #: home/templates/about.html:20
 msgid "MyStory"
 msgstr "My story"
-
-#: home/templates/about.html:21
-msgid "MyStorySum"
-msgstr ""
-"There is one way to learn all languages. Karina has always known. While "
-"studying Dutch she was introduced to the transformational generative grammar "
-"of Noam Chomski. Much was expected at that time, they were on to something. "
-"One could understand something of language, that which is completely our own "
-"and yet completely mysterious. The transformational generative grammar "
-"stated that everyone has an innate universal language ability. A foray from "
-"language to physics, biology, humanity, pedagogy aroused curiosity. The "
-"practice of the language learning process repeats itself a number of times "
-"in life when one wants to learn a new language. Karina learned it well once, "
-"French at the teacher academy and then made several attempts to learn other "
-"languages. At the end of her teaching career she was introduced to "
-"Esperanto. She was immediately charmed. So many beautiful words, sounds, a "
-"simple grammar, without exceptions, free word order. After working through "
-"some self-study methods, she started translating poems. These little "
-"language gems of her own choosing continued to occupy her, so she mastered "
-"the language. Eventually she came up with the idea of ​​putting some of them "
-"together, providing them with a simple overview of the grammar, and thus the "
-"'poetic language method' was born."
 
 #: home/templates/about.html:42 home/templates/index.html:167
 #: home/templates/learning_methode.html:98

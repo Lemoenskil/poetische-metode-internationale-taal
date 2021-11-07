@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-07 11:10+0000\n"
+"POT-Creation-Date: 2021-11-07 12:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,12 @@ msgstr ""
 msgid "introduction"
 msgstr ""
 
+#: home/models.py:31
+#, fuzzy
+#| msgid "MyStory"
+msgid "my_story"
+msgstr "Mijn verhaal"
+
 #: home/templates/about.html:19 templates/base.html:75 templates/base.html:117
 msgid "About"
 msgstr "Over"
@@ -45,30 +51,6 @@ msgstr "Over"
 #: home/templates/about.html:20
 msgid "MyStory"
 msgstr "Mijn verhaal"
-
-#: home/templates/about.html:21
-msgid "MyStorySum"
-msgstr ""
-"Er is één manier om alle talen te leren. Karina heeft het altijd geweten. "
-"Toen ze Nederlands studeerde  maakte ze kennis met de transformationele "
-"generatieve grammatica van Noam Chomski. Er werd veel van verwacht in die "
-"tijd, men  was iets op het spoor.  Iets zou men   van de taal, dat wat ons "
-"volledig eigen is en toch volstrekt mysterieus is kunnen begrijpen. De "
-"transformationeel generatieve grammatica stelde dat iedereen over een "
-"aangeboren universeel taalvermogen  beschikt. Een uitstapje van de taal naar "
-"de natuurkunde, de biologie, de menskunde, de pedagogiek prikkelde de "
-"nieuwsgierigheid. De praktijk van het taalleerproces herhaalt zich een "
-"aantal keren in het leven als men een nieuwe taal wil leren. Karina heeft "
-"het een keer goed geleerd, frans op de lerarenacademie en daarna een aantal "
-"pogingen gedaan om andere talen te leren. Aan het eind van haar leraren "
-"carrière maakte ze kennis met het Esperanto. Ze was onmiddellijk "
-"gecharmeerd. Zoveel prachtige woorden, klanken, een eenvoudige grammatica, "
-"zonder uitzonderingen, vrije woordvolgorde. Na een aantal zelfstudiemethoden "
-"doorgewerkt  te hebben, ging ze gedichten vertalen. Deze zelf gekozen kleine "
-"taaljuweeltjes bleven haar bezighouden, zo maakte ze zich de taal eigen.  "
-"Uiteindelijk kwam ze op de gedachte er een aantal bij elkaar te zetten, te "
-"voorzien van een eenvoudig overzicht van de grammatica  en zo ontstond de "
-"‘poëtische taalmethode’."
 
 #: home/templates/about.html:42 home/templates/index.html:167
 #: home/templates/learning_methode.html:98
