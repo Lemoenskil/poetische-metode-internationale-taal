@@ -7,194 +7,194 @@
 
 {% block content %}
 			
-			<!-- Content-->
-			<div class="md-content" >
-				
-				<!-- background picture -->
-				<div>
+	<!-- Content-->
+	<div class="md-content" >
+		
+		<!-- background picture -->
+		<div>
 
-					<div class="bg-image" style="background-color: green; height: 80vh; width:100%; background-repeat: no-repeat;
-					background-size: cover;"> 
-						<div class="md-tb">
-							<div class="md-tb__cell">
-								<div class="slider__content">
-									<div class="container text-center">
-										<p><h4>{% trans 'frontpagetext' %} </h4></p>
-									</div>
-								</div>
+			<div class="bg-image" style="background-color: green; height: 80vh; width:100%; background-repeat: no-repeat;
+			background-size: cover;"> 
+				<div class="md-tb">
+					<div class="md-tb__cell">
+						<div class="slider__content">
+							<div class="container text-center">
+								<p><h4>{% trans 'frontpagetext' %} </h4></p>
 							</div>
 						</div>
 					</div>
-
-					
-				</div><!-- End / background picture -->
-				
-				<!-- Service-->
-				
-				<!-- Section: Featured Content -->
-				<section class="md-section" style="background-color:#A9DFBF;padding:0;">
-					<div class="container">
-						<div class="textbox-group">
-							<div class="row">
-								{% for blog in blogs|dictsortreversed:"featured"|slice:":2"%}
-								<div class="col-md-4 col-lg-4 ">
-									
-									<!-- textbox -->
-									<div class="textbox">
-										<div class="textbox__image"><a href={% url 'blog_detail' blog.id %}><img src="{{blog.image.url}}" alt=""/></a></div>
-										<div class="textbox__body">
-											<h2 class="textbox__title"><a href={% url 'blog_detail' blog.id %}>{{blog.title}}</a></h2>
-											<div class="textbox__description featured_content_snippet">
-												{{blog.content|truncatewords:15}}
-												<br>
-												<a class="mt-4" href="{% url 'blog_detail' blog.id %}">{% trans 'Readmore' %}</a>
-											</div>
-										</div>
-									</div><!-- End / textbox -->
-									
-								</div>
-								{% endfor %}
-								{% with poems|dictsortreversed:"featured"|first as poem %}
-								<div class="col-md-4 col-lg-4 ">
-									
-									<!-- textbox -->
-									<div class="textbox">
-										<div class="textbox__image"><a href={% url 'single_poem' poem.id  %}><img src="{{poem.image.url}}" alt=""/></a></div>
-										<div class="textbox__body">
-											{% with poem.title.all|first as title %}
-											<h2 class="textbox__title"><a href={% url 'single_poem' poem.id  %}>{{title.title}}</a></h2>
-											{% endwith %}
-											{% with poem.stanzas|flatten_stanzas|slice:":3" as lines %}
-											<div class="textbox__description featured_content_snippet">
-												{% for line in lines %}
-													{{line}}<br>
-												{% endfor %}
-												<a class=" mt-4" href={% url 'single_poem' poem.id  %}>{% trans 'Readmore' %}</a>
-											</div>
-											{% endwith %}
-										</div>
-									</div><!-- End / textbox -->
-									
-								</div>
-								{% endwith %}
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- End / Section: Featured Poem -->
-
-				<!-- Section -->
-				<section class="md-section" style="background-color:#f7f7f7;padding-top:0;">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-10 col-lg-8 offset-0 offset-sm-0 offset-md-1 offset-lg-2 ">
-								
-								<!-- iconbox -->
-								<div class="iconbox">
-									<div class="iconbox__icon"><i class="ti-headphone-alt"></i></div>
-									<div>
-										<h2 class="iconbox__title"><a href="#">{% trans 'LearnNewLanguage' %}</a></h2>
-										<div class="iconbox__description">{% trans 'LearnNewLanguageSum' %}</div>
-									</div>
-								</div><!-- End / iconbox -->
-								
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6 col-md-6 col-lg-3 ">
-								
-								<!-- iconbox -->
-								<div class="iconbox iconbox__style-02">
-									<div class="iconbox__icon"><i class="ti-announcement"></i></div>
-									<div>
-										<h2 class="iconbox__title"><a href="#">{% trans 'NewWordsAndSentences' %}</a></h2>
-										<div class="iconbox__description">{% trans 'NewWordsAndSentencesSummary' %}</div>
-									</div>
-								</div><!-- End / iconbox -->
-								
-							</div>
-							<div class="col-sm-6 col-md-6 col-lg-3 ">
-								
-								<!-- iconbox -->
-								<div class="iconbox iconbox__style-02">
-									<div class="iconbox__icon"><i class="ti-headphone"></i></div>
-									<div>
-										<h2 class="iconbox__title"><a href="#">{% trans 'Easytorepeat' %}</a></h2>
-										<div class="iconbox__description">{% trans 'Easytorepeatsum' %}</div>
-									</div>
-								</div><!-- End / iconbox -->
-								
-							</div>
-							<div class="col-sm-6 col-md-6 col-lg-3 ">
-								
-								<!-- iconbox -->
-								<div class="iconbox iconbox__style-02">
-									<div class="iconbox__icon"><i class="ti-timer"></i></div>
-									<div>
-										<h2 class="iconbox__title"><a href="#">{% trans 'RapidProgress' %}</a></h2>
-										<div class="iconbox__description">{% trans 'RapidProgressSum' %}</div>
-									</div>
-								</div><!-- End / iconbox -->
-								
-							</div>
-							<div class="col-sm-6 col-md-6 col-lg-3 ">
-								
-								<!-- iconbox -->
-								<div class="iconbox iconbox__style-02">
-									<div class="iconbox__icon"><i class="ti-briefcase"></i></div>
-									<div>
-										<h2 class="iconbox__title"><a href="#">{% trans 'Personalized' %} &amp; {% trans 'Uniqe' %}</a></h2>
-										<div class="iconbox__description">{% trans 'PersonalizedSum' %}</div>
-									</div>
-								</div><!-- End / iconbox -->
-								
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- End / Section -->
-				
-				
-				<!-- Latest Blogs -->
-				<!-- Section -->
-				<section class="md-section" style="padding-bottom:0;">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-8 col-lg-8 offset-0 offset-sm-0 offset-md-2 offset-lg-2 ">
-								
-								<!-- title-01 -->
-								<div class="title-01">
-									<h2 class="title-01__title">{% trans 'Meestrecenteblogs' %}</h2>
-								</div><!-- End / title-01 -->
-								
-							</div>
-						</div>
-					</div>
-					<div class="consult-project">
-						<div class="row">
-							{% for blog in blogs|slice:":4" %}
-							<div class="col-sm-6 col-md-6 col-lg-6 col-xl-3 " style="padding-left: 5px; padding-right: 5px;">
-								<!-- post-02 -->
-								<div class="post-02 post-02__style-02 js-post-effect">
-									<div class="post-02__media"><a href="{% url 'blog_detail' blog.id %}"><img src="{{blog.image.url}}" alt=""/></a></div>
-									<div class="post-02__body">
-										<h2 class="post-02__title"><a href="#">{{blog.title}}</a></h2>
-										<div class="post-02__department">{{blog.tag}}</div>
-										<div class="post-02__content">
-											<div class="post-02__description">{{blog.content|truncatewords:15}}</div><a class="post-02__link" href="{% url 'blog_detail' blog.id %}">{% trans 'Readmore' %}</a>
-										</div>
-									</div>
-								</div><!-- End / post-02 -->
-							</div>
-							{% endfor %}
-
-
-						</div>
-					</div>
-				</section>
-				<!-- End / Section -->	
-				
+				</div>
 			</div>
-			<!-- End / Content-->
+
+			
+		</div><!-- End / background picture -->
+		
+		<!-- Service-->
+		
+		<!-- Section: Featured Content -->
+		<section class="md-section" style="background-color:#A9DFBF;padding:0;">
+			<div class="container">
+				<div class="textbox-group">
+					<div class="row">
+						{% for blog in blogs|dictsortreversed:"featured"|slice:":2"%}
+						<div class="col-md-4 col-lg-4 ">
+							
+							<!-- textbox -->
+							<div class="textbox">
+								<div class="textbox__image"><a href={% url 'blog_detail' blog.id %}><img src="{{blog.image.url}}" alt=""/></a></div>
+								<div class="textbox__body">
+									<h2 class="textbox__title"><a href={% url 'blog_detail' blog.id %}>{{blog.title}}</a></h2>
+									<div class="textbox__description featured_content_snippet">
+										{{blog.content|truncatewords:15}}
+										<br>
+										<a class="mt-4" href="{% url 'blog_detail' blog.id %}">{% trans 'Readmore' %}</a>
+									</div>
+								</div>
+							</div><!-- End / textbox -->
+							
+						</div>
+						{% endfor %}
+						{% with poems|dictsortreversed:"featured"|first as poem %}
+						<div class="col-md-4 col-lg-4 ">
+							
+							<!-- textbox -->
+							<div class="textbox">
+								<div class="textbox__image"><a href={% url 'single_poem' poem.id  %}><img src="{{poem.image.url}}" alt=""/></a></div>
+								<div class="textbox__body">
+									{% with poem.title.all|first as title %}
+									<h2 class="textbox__title"><a href={% url 'single_poem' poem.id  %}>{{title.title}}</a></h2>
+									{% endwith %}
+									{% with poem.stanzas|flatten_stanzas|slice:":3" as lines %}
+									<div class="textbox__description featured_content_snippet">
+										{% for line in lines %}
+											{{line}}<br>
+										{% endfor %}
+										<a class=" mt-4" href={% url 'single_poem' poem.id  %}>{% trans 'Readmore' %}</a>
+									</div>
+									{% endwith %}
+								</div>
+							</div><!-- End / textbox -->
+							
+						</div>
+						{% endwith %}
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End / Section: Featured Poem -->
+
+		<!-- Section -->
+		<section class="md-section" style="background-color:#f7f7f7;padding-top:0;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-lg-8 offset-0 offset-sm-0 offset-md-1 offset-lg-2 ">
+						
+						<!-- iconbox -->
+						<div class="iconbox">
+							<div class="iconbox__icon"><i class="ti-headphone-alt"></i></div>
+							<div>
+								<h2 class="iconbox__title"><a href="#">{% trans 'LearnNewLanguage' %}</a></h2>
+								<div class="iconbox__description">{% trans 'LearnNewLanguageSum' %}</div>
+							</div>
+						</div><!-- End / iconbox -->
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-md-6 col-lg-3 ">
+						
+						<!-- iconbox -->
+						<div class="iconbox iconbox__style-02">
+							<div class="iconbox__icon"><i class="ti-announcement"></i></div>
+							<div>
+								<h2 class="iconbox__title"><a href="#">{% trans 'NewWordsAndSentences' %}</a></h2>
+								<div class="iconbox__description">{% trans 'NewWordsAndSentencesSummary' %}</div>
+							</div>
+						</div><!-- End / iconbox -->
+						
+					</div>
+					<div class="col-sm-6 col-md-6 col-lg-3 ">
+						
+						<!-- iconbox -->
+						<div class="iconbox iconbox__style-02">
+							<div class="iconbox__icon"><i class="ti-headphone"></i></div>
+							<div>
+								<h2 class="iconbox__title"><a href="#">{% trans 'Easytorepeat' %}</a></h2>
+								<div class="iconbox__description">{% trans 'Easytorepeatsum' %}</div>
+							</div>
+						</div><!-- End / iconbox -->
+						
+					</div>
+					<div class="col-sm-6 col-md-6 col-lg-3 ">
+						
+						<!-- iconbox -->
+						<div class="iconbox iconbox__style-02">
+							<div class="iconbox__icon"><i class="ti-timer"></i></div>
+							<div>
+								<h2 class="iconbox__title"><a href="#">{% trans 'RapidProgress' %}</a></h2>
+								<div class="iconbox__description">{% trans 'RapidProgressSum' %}</div>
+							</div>
+						</div><!-- End / iconbox -->
+						
+					</div>
+					<div class="col-sm-6 col-md-6 col-lg-3 ">
+						
+						<!-- iconbox -->
+						<div class="iconbox iconbox__style-02">
+							<div class="iconbox__icon"><i class="ti-briefcase"></i></div>
+							<div>
+								<h2 class="iconbox__title"><a href="#">{% trans 'Personalized' %} &amp; {% trans 'Uniqe' %}</a></h2>
+								<div class="iconbox__description">{% trans 'PersonalizedSum' %}</div>
+							</div>
+						</div><!-- End / iconbox -->
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End / Section -->
+		
+		
+		<!-- Latest Blogs -->
+		<!-- Section -->
+		<section class="md-section" style="padding-bottom:0;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-lg-8 offset-0 offset-sm-0 offset-md-2 offset-lg-2 ">
+						
+						<!-- title-01 -->
+						<div class="title-01">
+							<h2 class="title-01__title">{% trans 'Meestrecenteblogs' %}</h2>
+						</div><!-- End / title-01 -->
+						
+					</div>
+				</div>
+			</div>
+			<div class="consult-project">
+				<div class="row">
+					{% for blog in blogs|slice:":4" %}
+					<div class="col-sm-6 col-md-6 col-lg-6 col-xl-3 " style="padding-left: 5px; padding-right: 5px;">
+						<!-- post-02 -->
+						<div class="post-02 post-02__style-02 js-post-effect">
+							<div class="post-02__media"><a href="{% url 'blog_detail' blog.id %}"><img src="{{blog.image.url}}" alt=""/></a></div>
+							<div class="post-02__body">
+								<h2 class="post-02__title"><a href="#">{{blog.title}}</a></h2>
+								<div class="post-02__department">{{blog.tag}}</div>
+								<div class="post-02__content">
+									<div class="post-02__description">{{blog.content|truncatewords:15}}</div><a class="post-02__link" href="{% url 'blog_detail' blog.id %}">{% trans 'Readmore' %}</a>
+								</div>
+							</div>
+						</div><!-- End / post-02 -->
+					</div>
+					{% endfor %}
+
+
+				</div>
+			</div>
+		</section>
+		<!-- End / Section -->	
+		
+	</div>
+	<!-- End / Content-->
 			
 {% endblock %} 
