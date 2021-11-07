@@ -31,12 +31,30 @@
 				
 				<!-- Service-->
 				
-				<!-- Section: Featured Poem -->
-				{% with poems|dictsortreversed:"featured"|first as poem %}
+				<!-- Section: Featured Content -->
 				<section class="md-section" style="background-color:#A9DFBF;padding:0;">
 					<div class="container">
 						<div class="textbox-group">
 							<div class="row">
+								{% for blog in blogs|dictsortreversed:"featured"|slice:":2"%}
+								<div class="col-md-4 col-lg-4 ">
+									
+									<!-- textbox -->
+									<div class="textbox">
+										<div class="textbox__image"><a href={% url 'blog_detail' blog.id %}><img src="{{blog.image.url}}" alt=""/></a></div>
+										<div class="textbox__body">
+											<h2 class="textbox__title"><a href={% url 'blog_detail' blog.id %}>{{blog.title}}</a></h2>
+											<div class="textbox__description featured_content_snippet">
+												{{blog.content|truncatewords:15}}
+												<br>
+												<a class="mt-4" href="{% url 'blog_detail' blog.id %}">{% trans 'Readmore' %}</a>
+											</div>
+										</div>
+									</div><!-- End / textbox -->
+									
+								</div>
+								{% endfor %}
+								{% with poems|dictsortreversed:"featured"|first as poem %}
 								<div class="col-md-4 col-lg-4 ">
 									
 									<!-- textbox -->
@@ -58,49 +76,11 @@
 									</div><!-- End / textbox -->
 									
 								</div>
-								<div class="col-md-4 col-lg-4 ">
-									
-									<!-- textbox -->
-									<div class="textbox">
-										<div class="textbox__image"><a href={% url 'single_poem' poem.id  %}><img src="{{poem.image.url}}" alt=""/></a></div>
-										<div class="textbox__body">
-											{% language "eo" %}
-											{% with poem.title.all|first as title %}
-											<h2 class="textbox__title"><a href={% url 'single_poem' poem.id  %}>{{title.title}}</a></h2>
-											{% endwith %}
-											{% with poem.stanzas|flatten_stanzas|slice:":3" as lines %}
-											<div class="textbox__description featured_content_snippet">
-												{% for line in lines %}
-													{{line}}<br>
-												{% endfor %}
-												<a class=" mt-4" href={% url 'single_poem' poem.id  %}>Legu pli ...</a>
-											</div>
-											{% endwith %}
-											{% endlanguage %}
-										</div>
-									</div><!-- End / textbox -->
-									
-								</div>
-								<div class="col-md-4 col-lg-4 ">
-									
-									<!-- textbox -->
-									<div class="textbox">
-										<div class="textbox__image"><a href="{% url 'single_poem' poem.id  %}#author"><img src="{{poem.author.portrait.url}}" alt=""/></a></div>
-										<div class="textbox__body">
-											<h2 class="textbox__title"><a href="{% url 'single_poem' poem.id  %}#author">{{poem.author}}</a></h2>
-											<div class="textbox__description featured_content_snippet">
-												{{poem.author.abstract|truncatewords:15}}<br>
-												<a class=" mt-4" href="{% url 'single_poem' poem.id  %}#author">{% trans 'Readmore' %}</a>
-											</div>
-										</div>
-									</div><!-- End / textbox -->
-									
-								</div>
+								{% endwith %}
 							</div>
 						</div>
 					</div>
 				</section>
-				{% endwith %}
 				<!-- End / Section: Featured Poem -->
 
 				<!-- Section -->

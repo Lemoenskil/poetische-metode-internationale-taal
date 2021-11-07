@@ -8,6 +8,7 @@ class Blog(models.Model):
     """
     A single Blog post
     """
+    featured = models.BooleanField(default=False)
     title = TranslatedField(
         models.CharField(_("title"), max_length=254, default='', blank=True)
     )
