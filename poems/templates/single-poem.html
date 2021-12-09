@@ -76,7 +76,7 @@
 				<section class="widget-text__style-04 widget">
 					<!-- Author dropdown -->
 					<div class="dropdown" data-init="dropdown">
-						<a class="dropdown__toggle widget-title" href="javascript:void(0)">{% trans 'Poet' %}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+						<a class="dropdown__toggle " href="javascript:void(0)">{% trans 'Poet' %}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 						<div class="dropdown__content" data-position="right">
 							<ul class="list-style-none">
 								{% for author in authors %}
@@ -96,7 +96,7 @@
 
 					<!-- Genre dropdown -->
 					<div class="dropdown" data-init="dropdown">
-						<a class="dropdown__toggle widget-title" href="javascript:void(0)">{% trans 'Genres' %}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+						<a class="dropdown__toggle " href="javascript:void(0)">{% trans 'Genres' %}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 						<div class="dropdown__content" data-position="right">
 							<ul class="list-style-none">
 								{% for genre in genres %}
@@ -116,7 +116,7 @@
 
 					<!-- Country dropdown -->
 					<div class="dropdown" data-init="dropdown">
-						<a class="dropdown__toggle widget-title" href="javascript:void(0)">{% trans 'Country' %}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+						<a class="dropdown__toggle " href="javascript:void(0)">{% trans 'Country' %}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 						<div class="dropdown__content" data-position="right">
 							<ul class="list-style-none">
 								{% for country in countries %}
@@ -140,7 +140,7 @@
 				
 				<!-- widget-text__widget -->
 				<section class="widget-text__widget widget-text__style-04 widget">
-					<h3 class="widget-title">{% trans 'RecentPoems' %}</h3>
+					<h3 class="">{% trans 'RecentPoems' %}</h3>
 					{% for poem in recent_poems|slice:":2" %}
 					<div class="widget-text__content">
 						<div class="post-01__style-03">
