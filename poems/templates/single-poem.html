@@ -146,7 +146,7 @@
 						<div class="post-01__style-03">
 							<div>
 								{% with poem.title.all|first as title %}
-								<h2 class="post-01__title"><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></h2>
+								<h6 class="post-01__title"><a href={% url 'single_poem' poem.id %}>{{title.title}}</a></h6>
 								{% endwith %}
 								<div class="post-01__time">{{poem.published_date}}</div>
 								<div class="post-01__note">- {{poem.author.name}}</div>
