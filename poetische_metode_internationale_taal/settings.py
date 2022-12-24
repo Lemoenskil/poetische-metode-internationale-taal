@@ -80,9 +80,6 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True
-
 ROOT_URLCONF = 'poetische_metode_internationale_taal.urls'
 
 TEMPLATES = [
@@ -120,6 +117,10 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
+if 'SSL_REDIRECT' in os.environ:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
