@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-07 12:41+0000\n"
+"POT-Creation-Date: 2023-02-14 17:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "name"
 msgstr "Name"
 
-#: audio/templates/audio.html:23
+#: audio/templates/audio.html:18
 msgid "Poem_name_audio"
 msgstr "Audio recordings of poems"
 
@@ -33,6 +33,10 @@ msgstr "Title"
 #: blogs/models.py:16
 msgid "content"
 msgstr "content"
+
+#: blogs/templates/blog-detail.html:36
+msgid "ReadPrevBlog"
+msgstr "Read more"
 
 #: home/models.py:28
 msgid "introduction"
@@ -59,13 +63,13 @@ msgid "MyStory"
 msgstr "My story"
 
 #: home/templates/about.html:42 home/templates/index.html:167
-#: home/templates/learning_methode.html:98
+#: home/templates/learning_methode.html:96
 msgid "Meestrecenteblogs"
 msgstr "Most recent blogs"
 
 #: home/templates/about.html:59 home/templates/index.html:50
 #: home/templates/index.html:72 home/templates/index.html:184
-#: home/templates/learning_methode.html:115 poems/templates/poems.html:44
+#: home/templates/learning_methode.html:113 poems/templates/poems.html:44
 msgid "Readmore"
 msgstr "Read more ..."
 
@@ -140,21 +144,21 @@ msgstr "One Poem a week"
 msgid "OnePoemAWeekSum"
 msgstr "Learning a poem a week by heart"
 
-#: home/templates/learning_methode.html:63
+#: home/templates/learning_methode.html:62
 msgid "MakeWordlists"
 msgstr "Create word lists from your own associations"
 
-#: home/templates/learning_methode.html:64
+#: home/templates/learning_methode.html:63
 msgid "MakeWordlistsum"
 msgstr ""
 "The poetic method also teaches you how to create word lists in your own way "
 "and use your own associations in the language learning process."
 
-#: home/templates/learning_methode.html:75
+#: home/templates/learning_methode.html:73
 msgid "OverviewLanguageRules"
 msgstr "Overview of the language rules"
 
-#: home/templates/learning_methode.html:76
+#: home/templates/learning_methode.html:74
 msgid "OverviewLanguageRulesSum"
 msgstr ""
 "Examples from the poems made it a concise introduction to the international "
@@ -184,19 +188,19 @@ msgstr "Country"
 msgid "RecentPoems"
 msgstr "Most recent poems"
 
-#: poetische_metode_internationale_taal/settings.py:156
+#: poetische_metode_internationale_taal/settings.py:160
 msgid "Esperanto"
 msgstr "Esperanto"
 
-#: poetische_metode_internationale_taal/settings.py:157
+#: poetische_metode_internationale_taal/settings.py:161
 msgid "Nederlands"
 msgstr "Netherlands"
 
-#: poetische_metode_internationale_taal/settings.py:158
+#: poetische_metode_internationale_taal/settings.py:162
 msgid "Original"
 msgstr "Original"
 
-#: poetische_metode_internationale_taal/settings.py:159
+#: poetische_metode_internationale_taal/settings.py:163
 msgid "Engels"
 msgstr "English"
 
@@ -236,3 +240,8 @@ msgstr "other words"
 msgid "wordlistVerbs"
 msgstr "verb"
 
+#~ msgid "Continue reading"
+#~ msgstr "Continue reading"
+
+#~ msgid "Read previous"
+#~ msgstr "Read previous"

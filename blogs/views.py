@@ -23,9 +23,19 @@ def blog_detail(request, pk):
 #     not found
 #     """
     blog = get_object_or_404(Blog, pk=pk)
+    context = { 'blog': blog }
+    try:
+        context['prev_blog'] = blog.get_previous_by_published_date()
+    except Blog.DoesNotExist:
+        pass
+    try:
+        context['next_blog'] = blog.get_next_by_published_date()
+    except Blog.DoesNotExist:
+        pass
+
 #     post.views += 1
 #     post.save()
-    return render(request, "blog-detail.html", {'blog': blog})
+    return render(request, "blog-detail.html", context)
 
 
 # def create_or_edit_post(request, pk=None):

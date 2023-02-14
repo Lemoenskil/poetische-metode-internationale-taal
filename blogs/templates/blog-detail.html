@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 
@@ -29,9 +30,15 @@
                                     </ul>
                                     <div class="image-full"><img src="{{blog.image.url}}" alt=""></div>
                                     <p class="text">{{blog.content | linebreaks}}</p>
+                                    <ul class="consult-postDetail__meta">
+                                        {% if prev_blog %}
+                                        <li><i class="fa" aria-hidden="true"></i>
+                                            <a href={% url 'blog_detail' prev_blog.id %}>{% trans 'ReadPrevBlog' %}: {{prev_blog.title}}</a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
